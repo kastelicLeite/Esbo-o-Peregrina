@@ -3,8 +3,8 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const raiz = path.resolve(__dirname, '..', 'frontend');
-const porta = Number(process.env.PORT || 4173);
-const endereco = process.env.PORT ? '0.0.0.0' : '127.0.0.1';
+const porta = Number(process.env.PORT || 3000);
+const endereco = '0.0.0.0';
 const tipos = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
