@@ -3,6 +3,8 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const raiz = path.resolve(__dirname, '..', 'frontend');
+const porta = Number(process.env.PORT || 4173);
+const endereco = process.env.PORT ? '0.0.0.0' : '127.0.0.1';
 const tipos = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
@@ -46,6 +48,6 @@ const servidor = http.createServer((pedido, resposta) => {
   });
 });
 
-servidor.listen(4173, '127.0.0.1', () => {
-  console.log('Prévia local: http://127.0.0.1:4173');
+servidor.listen(porta, endereco, () => {
+  console.log(`Site disponível em http://${endereco}:${porta}`);
 });
