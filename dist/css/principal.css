@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+@import url('./base/variaveis.css');
+@import url('./base/global.css');
+@import url('./componentes/botoes.css');
+@import url('./componentes/produtos.css');
+@import url('./layout/cabecalho.css');
+@import url('./layout/rodape.css');
+@import url('./paginas/inicio.css');

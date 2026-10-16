@@ -1,0 +1,39 @@
+.rodape {
+  border-top: 4px solid var(--magenta);
+  padding-block: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.nome-rodape {
+  color: var(--magenta-texto);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -.5px;
+}
+
+.rodape > span {
+  font-size: 11px;
+  color: var(--cinza);
+}
+
+.rodape nav {
+  font-size: 12px;
+  gap: 20px;
+}
+
+@media (max-width: 1000px) {
+  .rodape {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 700px) {
+  .rodape {
+    align-items: start;
+    flex-direction: column;
+    gap: 24px;
+  }
+}

@@ -1,0 +1,65 @@
+.cabecalho {
+  min-height: 116px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  border-bottom: 1px solid var(--linha);
+}
+
+.marca {
+  display: flex;
+  flex-direction: column;
+  font-size: 33px;
+  font-weight: 750;
+  letter-spacing: -1.7px;
+  line-height: 1;
+}
+
+.marca img {
+  display: block;
+  width: 240px;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1000px) {
+  .cabecalho {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .cabecalho {
+    min-height: 100px;
+    flex-wrap: wrap;
+    padding-block: 22px 17px;
+    gap: 22px 12px;
+  }
+
+  .marca {
+    font-size: 27px;
+  }
+
+  .marca-menor {
+    font-size: 8px;
+  }
+
+  .cabecalho nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 700px) {
+  .marca {
+    flex: 0 1 170px;
+    min-width: 0;
+  }
+
+  .marca img {
+    width: 170px;
+  }
+}
