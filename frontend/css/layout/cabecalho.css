@@ -1,10 +1,33 @@
 .cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 5;
   min-height: 116px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 32px;
   border-bottom: 1px solid var(--linha);
+  background: var(--papel);
+  transition: transform 0.2s ease;
+}
+
+.cabecalho-oculto {
+  transform: translateY(-100%);
+}
+
+.cabecalho:focus-within {
+  transform: translateY(0);
+}
+
+html {
+  scroll-padding-top: calc(var(--altura-cabecalho, 116px) + 16px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cabecalho {
+    transition: none;
+  }
 }
 
 .marca {

@@ -1,4 +1,5 @@
 import { configuracao, produtos, linkWhatsapp } from './configuracao.js';
+import './cabecalho.js';
 
 const lista = document.querySelector('#lista-produtos');
 const atalhos = document.querySelector('#atalhos-produtos');
