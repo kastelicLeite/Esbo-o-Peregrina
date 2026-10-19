@@ -4,7 +4,7 @@ Landing page estática preparada para hospedagem no Railway, sem dependências e
 
 ## Estrutura
 
-- `frontend/index.html`: estrutura, conteúdo e metadados.
+- `frontend/paginas/index.html`: estrutura, conteúdo e metadados.
 - `frontend/css/principal.css`: entrada dos estilos, separados em `base/`, `componentes/`, `layout/` e `paginas/`. As adaptações de tela ficam junto das regras de cada responsabilidade.
 - `frontend/js/configuracao.js`: telefone confirmado pelo responsável, mensagens, catálogo e caminhos de fotos e logo.
 - `frontend/js/principal.js`: apresentação do catálogo e links para WhatsApp.
@@ -25,6 +25,12 @@ Conecte o repositório GitHub a um serviço no Railway, mantendo a raiz do repos
 O arquivo `banco-de-dados/produtos.sql` contém o SQL para criar a tabela `produtos` em PostgreSQL. Execute-o em um banco PostgreSQL quando o serviço estiver configurado. O arquivo não é executado automaticamente pelo deploy.
 
 A tabela possui identificador automático, nome obrigatório, preço obrigatório com duas casas decimais e descrição obrigatória. O preço deve ser informado em reais e não pode ser negativo. Nenhum produto ou preço de exemplo foi inserido. O catálogo do frontend permanece em `frontend/js/configuracao.js` até a implementação da integração.
+
+## Painel admin provisório
+
+O botão Painel Admin no rodapé abre o formulário de acesso. A senha é validada no servidor pelo módulo scripts/acesso-admin.cjs e deve ser configurada exclusivamente na variável de ambiente SENHA_ADMIN no Railway. Ela não é enviada no JavaScript público.
+
+O painel está em frontend/paginas/painel-admin.html e sua entrega exige uma sessão válida. As sessões duram uma hora, utilizam cookie HttpOnly e ficam na memória do servidor; reiniciar ou publicar o serviço encerra os acessos. O botão Sair encerra a sessão. O painel ainda não possui operações administrativas.
 
 ## Imagens e identidade pendentes
 

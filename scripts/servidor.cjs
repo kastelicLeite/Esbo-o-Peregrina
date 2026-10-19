@@ -1,6 +1,7 @@
 const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
+const { atenderAdmin } = require('./acesso-admin.cjs');
 
 const raiz = path.resolve(__dirname, '..', 'frontend');
 const porta = Number(process.env.PORT || 3000);
@@ -17,6 +18,8 @@ const tipos = {
 };
 
 const servidor = http.createServer((pedido, resposta) => {
+  if (atenderAdmin(pedido, resposta)) return;
+
   let caminho;
 
   try {
@@ -26,8 +29,8 @@ const servidor = http.createServer((pedido, resposta) => {
     resposta.writeHead(400).end();
     return;
   }
-  if (caminho === raiz) {
-    caminho = path.join(raiz, 'index.html');
+  if (caminho === raiz || caminho === path.join(raiz, 'index.html')) {
+    caminho = path.join(raiz, 'paginas', 'index.html');
   }
 
   if (!caminho.startsWith(raiz + path.sep)) {

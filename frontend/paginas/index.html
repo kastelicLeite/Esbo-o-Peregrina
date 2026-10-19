@@ -5,6 +5,7 @@
   <head>
 
     <meta charset="UTF-8">
+    <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="description" content="Conheça os produtos da Gráfica Peregrina: adesivos, wind banners, panfletos, sacolas, agendas, cadernos e apostilas. Solicite um orçamento pelo WhatsApp.">
@@ -14,6 +15,7 @@
 
     <link rel="stylesheet" href="css/principal.css">
     <script type="module" src="js/principal.js"></script>
+    <script type="module" src="js/painel-admin.js"></script>
 
   </head>
 
@@ -181,6 +183,34 @@
       </nav>
 
       <span>Impressos para as suas ideias.</span>
+      <button class="botao-admin" id="abrir-admin" type="button">
+        Painel Admin
+      </button>
     </footer>
+
+    <dialog class="acesso-admin" id="acesso-admin" aria-labelledby="titulo-acesso">
+      <form id="formulario-admin">
+        <h2 id="titulo-acesso">Painel Admin</h2>
+        <p>Digite a senha para continuar.</p>
+
+        <label for="senha-admin">Senha</label>
+        <input
+          id="senha-admin"
+          name="senha"
+          type="password"
+          autocomplete="current-password"
+          aria-describedby="erro-admin"
+          required
+        >
+        <p class="erro-admin" id="erro-admin" role="alert"></p>
+
+        <div class="acoes-admin">
+          <button class="botao" type="submit">Entrar</button>
+          <button class="botao-admin" id="cancelar-admin" type="button">
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </dialog>
   </body>
 </html>
