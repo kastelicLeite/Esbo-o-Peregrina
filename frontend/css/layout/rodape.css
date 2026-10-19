@@ -1,6 +1,7 @@
 .rodape {
   border-top: 4px solid var(--magenta);
   padding-block: 30px;
+  padding-bottom: calc(100px + env(safe-area-inset-bottom));
   display: flex;
   align-items: center;
   justify-content: space-between;
