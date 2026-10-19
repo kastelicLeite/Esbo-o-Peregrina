@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tabela de produtos</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 32px 20px;
+        background: #f5f7fa;
+        color: #20212b;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      main {
+        max-width: 900px;
+        margin-inline: auto;
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: 26px;
+      }
+
+      p {
+        margin: 0 0 24px;
+        color: #515365;
+        line-height: 1.6;
+      }
+
+      .tabela {
+        overflow-x: auto;
+        background: #ffffff;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+      }
+
+      caption {
+        padding: 18px;
+        font-weight: bold;
+        text-align: left;
+      }
+
+      th,
+      td {
+        padding: 18px;
+        border: 1px solid #d5e0e6;
+      }
+
+      th {
+        background: #e3f7fd;
+        color: #00617e;
+      }
+
+      td {
+        color: #515365;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <h1>Produtos</h1>
+      <p>
+        Visualização das colunas definidas no SQL.
+        Este arquivo não está conectado a um banco de dados.
+      </p>
+
+      <div class="tabela">
+        <table>
+          <caption>Tabela de produtos</caption>
+          <thead>
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">Preço (R$)</th>
+              <th scope="col">Descrição</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="3">Nenhum produto cadastrado nesta visualização.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>
