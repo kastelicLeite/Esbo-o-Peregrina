@@ -1,6 +1,6 @@
 # Gráfica Peregrina
 
-Landing page estática preparada para hospedagem no Railway, sem dependências externas, cadastro ou rastreamento. O servidor Node entrega apenas os arquivos da pasta `frontend/`; não há API ou banco de dados.
+Landing page estática preparada para hospedagem no Railway, sem dependências externas, cadastro ou rastreamento. O servidor Node entrega apenas os arquivos da pasta `frontend/`. A estrutura SQL dos produtos está preparada; ainda não há conexão da aplicação com um banco de dados ou API.
 
 ## Estrutura
 
@@ -12,12 +12,19 @@ Landing page estática preparada para hospedagem no Railway, sem dependências e
 - `scripts/servidor.cjs`: servidor de arquivos estáticos utilizado pelo Railway.
 - `package.json`: comando de inicialização e versão do Node.
 - `railway.json`: inicialização e verificação de disponibilidade no Railway.
+- `banco-de-dados/produtos.sql`: definição da tabela de produtos em PostgreSQL.
 
 O comando `npm start` inicia o servidor. Não é necessário instalar pacotes ou compilar. A pasta `frontend/` é a raiz pública; as configurações, este README e os scripts do servidor não são servidos aos visitantes. O domínio previsto é graficaperegrina.com.br; canonical e demais metadados dependentes da URL devem ser definidos quando o endereço de publicação estiver confirmado.
 
 ## Railway
 
 Conecte o repositório GitHub a um serviço no Railway, mantendo a raiz do repositório como diretório do serviço. O comando `npm start` e a verificação em `/` estão definidos em `railway.json`. O servidor utiliza a porta `PORT` fornecida pela plataforma e escuta em `0.0.0.0`. Sem `PORT`, utiliza a porta 3000. Depois do deploy, gere um domínio na área de rede pública do serviço para compartilhar a prévia. Não é necessário configurar o domínio da empresa.
+
+## Banco de dados
+
+O arquivo `banco-de-dados/produtos.sql` contém o SQL para criar a tabela `produtos` em PostgreSQL. Execute-o em um banco PostgreSQL quando o serviço estiver configurado. O arquivo não é executado automaticamente pelo deploy.
+
+A tabela possui identificador automático, nome obrigatório, preço obrigatório com duas casas decimais e descrição obrigatória. O preço deve ser informado em reais e não pode ser negativo. Nenhum produto ou preço de exemplo foi inserido. O catálogo do frontend permanece em `frontend/js/configuracao.js` até a implementação da integração.
 
 ## Imagens e identidade pendentes
 
