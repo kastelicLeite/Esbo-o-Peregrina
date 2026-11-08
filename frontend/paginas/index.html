@@ -14,178 +14,453 @@
     <title>Gráfica Peregrina | Impressos e orçamento pelo WhatsApp</title>
 
     <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/paginas/catalogo.css">
+    <link rel="stylesheet" href="css/paginas/landing.css">
     <script type="module" src="js/principal.js"></script>
-    <script type="module" src="js/painel-admin.js"></script>
 
+      <link rel="stylesheet" href="/css/base/tema.css">
+    <script src="/js/tema.js"></script>
   </head>
 
   <body>
 
     <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
-    <header class="cabecalho largura">
-      <a class="marca" href="#inicio" aria-label="Gráfica Peregrina, início">
-        <img
-          src="assets/imagens/logo-peregrina.png"
-          alt="Gráfica Peregrina"
-          width="2159"
-          height="640"
-        >
-      </a>
-
-      <nav aria-label="Navegação principal">
-        <a href="#produtos">Produtos</a>
-        <a href="#como-pedir">Como pedir</a>
-        <a href="#contato">Contato</a>
-      </nav>
-
-      <a class="botao botao-pequeno" data-orcamento href="#contato">
-        Pedir orçamento
-      </a>
+    <header class="cabecalho">
+      <div class="largura cabecalho-conteudo">
+        <a class="marca" href="#inicio" aria-label="Gráfica Peregrina, sobre">
+          <img src="assets/imagens/logo-peregrina.png" alt="Gráfica Peregrina" width="2159" height="640" >
+        </a>
+        <form class="busca-cabecalho" role="search" aria-label="Buscar no catálogo" action="/paginas/produtos.html" method="get">
+          <label class="rotulo-busca-cabecalho" for="pesquisa-cabecalho">
+            Pesquisar produtos
+          </label>
+          <input id="pesquisa-cabecalho" name="q" type="search" placeholder="Pesquisar produtos" maxlength="180" autocomplete="off" >
+          <button type="submit" aria-label="Buscar produtos" title="Buscar produtos">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <circle cx="10.5" cy="10.5" r="6.5"/>
+              <path d="m16 16 4.5 4.5"/>
+            </svg>
+          </button>
+        </form>
+        <div class="cabecalho-acoes">
+          <a
+            class="botao orcamento-cabecalho"
+            data-orcamento
+            href="/#contato"
+            aria-label="Pedir orçamento pelo WhatsApp"
+            title="Pedir orçamento pelo WhatsApp"
+          >
+            <img class="logo-whatsapp-botao" src="/assets/imagens/whatsapp-simbolo.svg" alt="" width="20" height="20">
+            <span>
+              Pedir orçamento
+            </span>
+          </a>
+          <a class="acesso-orcamento" href="/paginas/orcamento.html" aria-label="Meu carrinho, 0 itens" title="Meu carrinho">
+            <svg
+              class="icone-carrinho"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M3 3h2l3 12h11l3-9H6"/>
+              <path d="M8 15l-1 3h12"/>
+              <circle cx="9" cy="21" r="1"/>
+              <circle cx="18" cy="21" r="1"/>
+            </svg>
+            <span class="rotulo-carrinho">
+              Meu carrinho
+            </span>
+            <span data-contador-orcamento>
+              0
+            </span>
+          </a>
+          <div class="acesso-visitante" data-acesso-visitante>
+            <a href="/paginas/entrar-conta.html">Entrar</a>
+            <a class="cadastrar-cabecalho" href="/paginas/cadastro.html">Cadastrar</a>
+          </div>
+          <a
+            class="conta-cabecalho-acesso"
+            data-conta-cabecalho
+            hidden
+            href="/paginas/minha-conta.html"
+            aria-label="Minha conta"
+            title="Minha conta"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <circle cx="12" cy="8" r="3.5"/>
+              <path d="M5 21v-2a7 7 0 0 1 14 0v2"/>
+            </svg>
+            <span class="conta-cabecalho-texto">
+              <span data-estado-conta>
+              </span>
+            </span>
+          </a>
+        </div>
+        <button class="menu-cabecalho-botao" type="button" aria-label="Abrir menu" aria-controls="menu-cabecalho" aria-expanded="false" hidden>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+        <nav class="navegacao-cabecalho" id="menu-cabecalho" aria-label="Navegação principal">
+          <details class="categorias-cabecalho">
+            <summary>Categorias</summary>
+            <div class="lista-categorias-cabecalho" aria-label="Categorias de produtos">
+              <p role="status">Carregando categorias…</p>
+            </div>
+          </details>
+          <a href="/paginas/produtos.html">
+            Produtos
+          </a>
+          <a href="/#como-pedir">
+            Como pedir
+          </a>
+          <a class="sobre-cabecalho" href="/" aria-current="page">
+            Sobre
+          </a>
+          <a class="painel-cabecalho" data-painel-admin href="/paginas/painel-admin.html" hidden>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <rect x="3" y="3" width="7" height="7" rx="1"/>
+              <rect x="14" y="3" width="7" height="7" rx="1"/>
+              <rect x="3" y="14" width="7" height="7" rx="1"/>
+              <rect x="14" y="14" width="7" height="7" rx="1"/>
+            </svg>
+            Painel admin
+          </a>
+        </nav>
+      </div>
     </header>
 
-    <main id="conteudo">
-      <section
-        id="inicio"
-        class="abertura largura"
-        aria-labelledby="titulo"
-      >
+    <main tabindex="-1" id="conteudo" class="landing-peregrina">
+      <section id="inicio" class="abertura largura" aria-labelledby="titulo">
         <p class="sobretitulo">GRÁFICA PEREGRINA</p>
-
-        <h1 id="titulo">
-          Materiais gráficos para divulgar sua marca
-          e organizar o dia a dia.
-        </h1>
-
-        <p class="introducao">
-          Adesivos, wind banners, panfletos, sacolas, agendas, cadernos
-          e apostilas. Escolha o que você precisa e converse com a
-          Peregrina sobre o seu pedido.
-        </p>
-
+        <h1 id="titulo">Materiais gráficos para divulgar sua marca e organizar o dia a dia.</h1>
+        <p class="introducao" data-texto-secao>Da divulgação à embalagem, encontre o material que acompanha a sua ideia. Escolha seus produtos e converse com a Peregrina.</p>
         <div class="abertura-acoes">
-          <a class="botao" data-orcamento href="#contato">
-            Solicitar orçamento pelo WhatsApp
-          </a>
-          <a class="link-texto" href="#produtos">Conhecer os produtos</a>
+          <a class="botao" data-orcamento data-chamada-secao href="#contato">Solicitar orçamento pelo WhatsApp</a>
+          <a class="link-texto" href="/paginas/produtos.html">Explorar o catálogo →</a>
         </div>
-
-        <nav
-          id="atalhos-produtos"
-          class="atalhos-produtos"
-          aria-label="Encontre um produto"
-        ></nav>
+        <div class="assinatura-cmyk" aria-hidden="true">
+          <i>
+          </i>
+          <i>
+          </i>
+          <i>
+          </i>
+          <i>
+          </i>
+        </div>
       </section>
 
-      <section
-        id="produtos"
-        class="produtos largura"
-        aria-labelledby="titulo-produtos"
-      >
-        <div class="titulo-secao">
+      <section class="faixa-peregrina" data-apos-secao="inicio" aria-label="Seu projeto com a Peregrina">
+        <div class="largura faixa-itens">
           <div>
-            <p class="sobretitulo">01 / PRODUTOS</p>
-            <h2 id="titulo-produtos">
-              O que vamos
-              <br>
-              imprimir?
-            </h2>
+            <strong>Sua marca</strong>
+            <span>em cada detalhe do material</span>
           </div>
-          <p>
-            Encontre o material para a sua ideia.
-            <br>
-            Os detalhes, a gente conversa no orçamento.
-          </p>
+          <div>
+            <strong>Seu projeto</strong>
+            <span>com opções para diferentes ideias</span>
+          </div>
+          <div>
+            <strong>Mais possibilidades</strong>
+            <span>de papel, formato e acabamento</span>
+          </div>
+          <div>
+            <strong>Uma conversa</strong>
+            <span>para reunir tudo no orçamento</span>
+          </div>
         </div>
-
-        <div id="lista-produtos" class="lista-produtos"></div>
       </section>
 
-      <section
-        id="como-pedir"
-        class="como-pedir"
-        aria-labelledby="titulo-como"
-      >
-        <div class="largura passos-layout">
-          <div>
-            <p class="sobretitulo">02 / DO PROJETO AO ORÇAMENTO</p>
-            <h2 id="titulo-como">
-              Começa com
-              <br>
-              uma conversa.
-            </h2>
-            <a class="link-texto" data-orcamento href="#contato">
-              Falar com a Peregrina
-            </a>
-          </div>
+      <section id="produtos" class="materiais-landing largura" aria-labelledby="titulo-materiais">
+        <div class="cabecalho-landing">
+          <p class="sobretitulo">O QUE IMPRIMIMOS</p>
+          <h2 id="titulo-materiais">Uma gráfica, muitas possibilidades para sua empresa.</h2>
+          <p data-texto-secao>Da apresentação da sua marca aos materiais do dia a dia. Conheça as possibilidades e reúna seu pedido em um só atendimento.</p>
+          <a class="link-texto" data-chamada-secao href="/paginas/produtos.html">Ver catálogo de produtos →</a>
+        </div>
+        <div id="materiais-inicio" class="grade-materiais">
+        </div>
+        <noscript>
+          <p>Conheça todos os materiais no <a href="/paginas/produtos.html">catálogo de produtos</a>.</p>
+        </noscript>
+        <p class="convite-material">Precisa de algo diferente? <a class="link-texto" data-orcamento href="#contato">Conte sua ideia pelo WhatsApp →</a>
+        </p>
+      </section>
 
+      <section id="como-pedir" class="como-pedir processo-landing" aria-labelledby="titulo-como">
+        <div class="largura">
+          <div class="cabecalho-landing">
+            <p class="sobretitulo">COMO FUNCIONA</p>
+            <h2 id="titulo-como">Do primeiro contato ao material pronto.</h2>
+            <p data-texto-secao>Compartilhe sua ideia e combine os detalhes de cada etapa com a equipe.</p>
+            <a class="link-texto" data-orcamento data-chamada-secao href="#contato">Falar com a Peregrina →</a>
+          </div>
           <ol class="passos">
             <li>
               <span>01</span>
               <div>
-                <h3>Escolha o material</h3>
-                <p>Conte qual produto você procura e como pretende usá-lo.</p>
+                <h3>Conte o que você precisa</h3>
+                <p>Escolha os produtos, a quantidade e o prazo que tem em mente.</p>
               </div>
             </li>
-
             <li>
               <span>02</span>
               <div>
-                <h3>Compartilhe sua ideia</h3>
-                <p>Informe a quantidade desejada. Se tiver uma arte ou referência, envie também.</p>
+                <h3>Combine as opções</h3>
+                <p>Converse sobre materiais, formatos e acabamentos para receber o orçamento.</p>
               </div>
             </li>
-
             <li>
               <span>03</span>
               <div>
-                <h3>Converse sobre os detalhes</h3>
-                <p>Combine as possibilidades e receba o orçamento pelo WhatsApp.</p>
+                <h3>Compartilhe sua arte</h3>
+                <p>Envie seu arquivo ou referência e alinhe os detalhes antes da impressão.</p>
+              </div>
+            </li>
+            <li>
+              <span>04</span>
+              <div>
+                <h3>Acompanhe seu pedido</h3>
+                <p>Após a aprovação, combine a produção e a forma de receber seu material.</p>
               </div>
             </li>
           </ol>
         </div>
       </section>
 
-      <section
-        id="contato"
-        class="contato largura"
-        aria-labelledby="titulo-contato"
-      >
-        <p class="sobretitulo">03 / GRÁFICA PEREGRINA</p>
-        <div class="contato-layout">
-          <h2 id="titulo-contato">
-            Vamos colocar
-            <br>
-            sua ideia <em>no papel?</em>
-          </h2>
-          <div>
-            <p>
-              Adesivos, materiais de divulgação e impressos para organizar suas
-              ideias. Fale com a Peregrina sobre o que você precisa.
-            </p>
-            <a class="botao" data-orcamento href="#contato">
-              Solicitar orçamento
-            </a>
-            <a id="telefone" class="telefone" href="#contato"></a>
+      <section id="diferenciais" class="diferenciais-landing largura" data-apos-secao="como-pedir" aria-labelledby="titulo-diferenciais">
+        <div class="cabecalho-landing">
+          <p class="sobretitulo">POR QUE A PEREGRINA</p>
+          <h2 id="titulo-diferenciais">Impressão é detalhe. E detalhe faz diferença.</h2>
+          <p>Do papel ao acabamento, cada escolha ajuda a dar forma à sua ideia. A conversa começa pelo que você precisa comunicar.</p>
+          <div class="assinatura-cmyk" aria-hidden="true">
+            <i>
+            </i>
+            <i>
+            </i>
+            <i>
+            </i>
+            <i>
+            </i>
           </div>
+        </div>
+        <div class="grade-diferenciais">
+          <article>
+            <span class="numero-diferencial">01</span>
+            <h3>Orçamento claro</h3>
+            <p>Produto, tiragem e opções reunidos para você conferir antes de aprovar.</p>
+          </article>
+          <article>
+            <span class="numero-diferencial">02</span>
+            <h3>Escolhas para seu projeto</h3>
+            <p>Consulte as combinações de tamanho, material e acabamento de cada produto.</p>
+          </article>
+          <article>
+            <span class="numero-diferencial">03</span>
+            <h3>Mais em um só pedido</h3>
+            <p>Reúna diferentes produtos no carrinho e solicite tudo na mesma conversa.</p>
+          </article>
+          <article>
+            <span class="numero-diferencial">04</span>
+            <h3>Contato direto</h3>
+            <p>Use o WhatsApp para explicar sua ideia, tirar dúvidas e combinar os próximos passos.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contato" class="contato contato-landing" aria-labelledby="titulo-contato">
+        <div class="largura contato-orcamento-layout">
+          <div class="apresentacao-contato">
+            <p class="sobretitulo">VAMOS FALAR DO SEU PROJETO</p>
+            <h2 id="titulo-contato">Conte o que você precisa. Vamos dar forma à sua ideia.</h2>
+            <p data-texto-secao>Preencha os detalhes para preparar sua mensagem ou fale diretamente com a equipe.</p>
+            <a class="link-texto" data-orcamento data-chamada-secao href="#contato">Conversar pelo WhatsApp →</a>
+            <a id="telefone" class="telefone" href="#contato">
+            </a>
+            <div id="dados-contato">
+            </div>
+          </div>
+          <div class="painel-orcamento-inicio">
+            <form id="formulario-orcamento">
+              <div class="campo-landing">
+                <label for="nome-orcamento">Seu nome ou empresa</label>
+                <input id="nome-orcamento" name="nome" placeholder="Como podemos te chamar?" autocomplete="organization" maxlength="100" required>
+              </div>
+              <div class="campos-orcamento">
+                <div class="campo-landing">
+                  <label for="material-orcamento">O que você precisa imprimir?</label>
+                  <select id="material-orcamento" name="material" required>
+                    <option value="">Escolha um material</option>
+                  </select>
+                </div>
+                <div class="campo-landing">
+                  <label for="quantidade-orcamento">Quantidade de unidades</label>
+                  <input id="quantidade-orcamento" name="quantidade" type="number" min="1" max="10000000" step="1" inputmode="numeric" placeholder="Ex.: 1.000" required>
+                </div>
+              </div>
+              <fieldset class="prazo-orcamento">
+                <legend>Para quando você precisa?</legend>
+                <div class="opcoes-prazo">
+                  <label>
+                    <input type="radio" name="prazo" value="O quanto antes">
+                    <span>O quanto antes</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="prazo" value="Até 7 dias">
+                    <span>Até 7 dias</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="prazo" value="Até 15 dias">
+                    <span>Até 15 dias</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="prazo" value="Sem pressa" checked>
+                    <span>Sem pressa</span>
+                  </label>
+                </div>
+              </fieldset>
+              <div class="campo-landing">
+                <label for="detalhes-orcamento">Detalhes <span>(opcional)</span>
+                </label>
+                <textarea id="detalhes-orcamento" name="detalhes" rows="4" maxlength="2000" placeholder="Tamanho, papel, acabamento, se já tem a arte pronta…">
+                </textarea>
+              </div>
+              <button class="botao botao-preparar-contato" type="submit">
+                <img src="/assets/imagens/whatsapp-simbolo.svg" alt="" width="20" height="20">Preparar orçamento pelo WhatsApp</button>
+              <p class="nota-formulario">O prazo desejado será confirmado pela equipe. Você confere a mensagem antes de enviar.</p>
+            </form>
+            <p id="estado-formulario" role="status">
+            </p>
+            <div id="revisao-contato" hidden>
+              <h3>Sua mensagem</h3>
+              <p id="instrucoes-contato">
+              </p>
+              <label for="mensagem-contato" class="rotulo-resumo">Resumo do orçamento</label>
+              <textarea id="mensagem-contato" rows="8" readonly>
+              </textarea>
+              <div class="acoes-contato">
+                <button id="copiar-contato" type="button">Copiar resumo</button>
+                <a class="botao" id="abrir-contato-whatsapp" target="_blank" rel="noopener noreferrer">Abrir WhatsApp →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="duvidas" class="duvidas-landing largura" data-apos-secao="contato" aria-labelledby="titulo-duvidas">
+        <div class="cabecalho-landing">
+          <p class="sobretitulo">DÚVIDAS FREQUENTES</p>
+          <h2 id="titulo-duvidas">Antes de imprimir, vamos conversar.</h2>
+          <p>Ficou alguma pergunta? <a class="link-texto" data-orcamento href="#contato">Mande no WhatsApp →</a>
+          </p>
+        </div>
+        <div class="lista-duvidas">
+          <details>
+            <summary>Qual é o prazo de produção?</summary>
+            <p>Depende do produto, da tiragem, do acabamento e da aprovação da arte. Informe quando você precisa do material para a equipe confirmar o prazo no orçamento.</p>
+          </details>
+          <details>
+            <summary>Preciso ter a arte pronta?</summary>
+            <p>Se já tiver um arquivo, envie junto com as informações do pedido. Se ainda não tiver, compartilhe sua ideia ou referência para conversar sobre as possibilidades.</p>
+          </details>
+          <details>
+            <summary>Em qual formato envio o arquivo?</summary>
+            <p>Se tiver um PDF de boa qualidade, envie para a equipe avaliar. As orientações de tamanho, margens, cores e preparação do arquivo dependem do material escolhido.</p>
+          </details>
+          <details>
+            <summary>Qual é a quantidade mínima?</summary>
+            <p>Cada produto tem suas próprias tiragens. Consulte as opções na página do produto ou informe a quantidade desejada pelo WhatsApp.</p>
+          </details>
+          <details>
+            <summary>Posso pedir vários produtos juntos?</summary>
+            <p>Sim. Adicione as configurações ao Meu carrinho e prepare uma única solicitação com todos os produtos. Os itens sem preço cadastrado ficam sob orçamento.</p>
+          </details>
+          <details>
+            <summary>Como combino entrega e pagamento?</summary>
+            <p>Consulte as condições com a equipe durante o orçamento. Forma de recebimento, valores e pagamento são combinados antes da aprovação do pedido.</p>
+          </details>
         </div>
       </section>
 
     </main>
 
-    <footer class="rodape largura">
-      <a class="nome-rodape" href="#inicio">Gráfica Peregrina</a>
-      <nav aria-label="Navegação do rodapé">
-        <a href="#produtos">Produtos</a>
-        <a href="#como-pedir">Como pedir</a>
-        <a href="#contato">Contato</a>
-      </nav>
+    <footer class="rodape">
+      <div class="largura">
+        <div class="rodape-principal">
+          <div class="rodape-marca">
+            <a class="nome-rodape" href="/">Gráfica Peregrina<span aria-hidden="true">.</span></a>
+            <p>Do papel ao acabamento, encontre o impresso que você precisa.</p>
+          </div>
 
-      <span>Impressos para as suas ideias.</span>
-      <button class="botao-admin" id="abrir-admin" type="button">
-        Painel Admin
-      </button>
+          <nav class="rodape-navegacao" aria-label="Navegação do rodapé">
+            <h2>Explore</h2>
+            <a href="/">Sobre</a>
+            <a href="/paginas/produtos.html">Produtos</a>
+            <a href="/#como-pedir">Como pedir</a>
+          </nav>
+
+          <div class="rodape-atendimento">
+            <h2>Vamos falar do seu projeto?</h2>
+            <p>Conte o que precisa e solicite um orçamento com a nossa equipe.</p>
+            <a class="rodape-whatsapp" data-orcamento href="https://wa.me/5511911116541"><span class="icone-whatsapp-rodape" aria-hidden="true"></span><span>Conversar pelo WhatsApp</span></a>
+            <a class="rodape-instagram" data-instagram href="https://instagram.com/graficaperegrina" target="_blank" rel="noopener noreferrer"><img src="/assets/imagens/instagram.png" alt="" width="20" height="20"><span>Instagram · @graficaperegrina</span></a>
+          </div>
+        </div>
+
+        <div class="rodape-base">
+          <p>Gráfica Peregrina <span aria-hidden="true">·</span> Todos os direitos reservados.</p>
+          <div class="rodape-utilitarios">
+            <a class="painel-rodape" data-painel-admin href="/paginas/painel-admin.html" hidden>Painel admin</a>
+            <a href="/paginas/historico.html">Meu histórico</a>
+            <a href="/paginas/recomendados.html">Recomendados</a>
+            <span class="rodape-versao" data-versao-site>Versão 1.0.0</span>
+          </div>
+        </div>
+        <div class="rodape-privacidade" data-privacidade-rodape><a href="/paginas/contato.html">Contato por e-mail</a> · <a href="/paginas/privacidade.html">Privacidade e atendimento</a></div>
+        <p class="credito-desenvolvedor">Desenvolvido por Arthur Kastelic Leite</p>
+      </div>
     </footer>
 
     <a
@@ -194,32 +469,8 @@
       href="#contato"
       aria-label="Conversar com a Gráfica Peregrina pelo WhatsApp"
     >
-      WhatsApp
+      <img src="/assets/imagens/whatsapp-simbolo.svg" alt="" width="32" height="32">
     </a>
 
-    <dialog class="acesso-admin" id="acesso-admin" aria-labelledby="titulo-acesso">
-      <form id="formulario-admin">
-        <h2 id="titulo-acesso">Painel Admin</h2>
-        <p>Digite a senha para continuar.</p>
-
-        <label for="senha-admin">Senha</label>
-        <input
-          id="senha-admin"
-          name="senha"
-          type="password"
-          autocomplete="current-password"
-          aria-describedby="erro-admin"
-          required
-        >
-        <p class="erro-admin" id="erro-admin" role="alert"></p>
-
-        <div class="acoes-admin">
-          <button class="botao" type="submit">Entrar</button>
-          <button class="botao-admin" id="cancelar-admin" type="button">
-            Cancelar
-          </button>
-        </div>
-      </form>
-    </dialog>
   </body>
 </html>

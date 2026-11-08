@@ -5,19 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow">
     <title>Painel admin | Gráfica Peregrina</title>
-
     <link rel="stylesheet" href="../css/principal.css">
-    <script type="module" src="../js/painel-admin.js"></script>
+    <link rel="stylesheet" href="../css/paginas/painel-admin.css">
+    <link rel="stylesheet" href="../css/paginas/catalogo.css">
+    <link rel="stylesheet" href="../css/paginas/produto.css">
+    <link rel="stylesheet" href="../css/paginas/previa-produto.css">
+    <link rel="stylesheet" href="../css/paginas/manual-painel.css">
+    <link rel="stylesheet" href="../css/paginas/visao-geral.css">
+    <script type="module" src="../js/admin/principal.js"></script>
+      <link rel="stylesheet" href="/css/base/tema.css">
+    <script src="/js/tema.js"></script>
   </head>
-
-  <body data-pagina="painel-admin">
-    <main class="pagina-admin largura" id="conteudo-admin" hidden>
-      <a class="link-texto" href="/">Voltar ao site</a>
-
-      <h1>Painel admin</h1>
-      <p>Área administrativa da Gráfica Peregrina.</p>
-
-      <button class="botao-admin" id="sair-admin" type="button">Sair</button>
-    </main>
+  <body class="corpo-admin">
+    <a class="pular" href="#pagina-admin">Pular para o conteúdo</a>
+    <div id="estrutura-admin" class="estrutura-admin" hidden>
+      <aside class="lateral-admin">
+        <a href="/" class="marca-admin">
+          <img src="../assets/imagens/logo-peregrina.png" alt="Gráfica Peregrina" width="2159" height="640">
+        </a>
+        <p class="rotulo-admin">PAINEL ADMINISTRATIVO</p>
+        <nav class="menu-admin" aria-label="Áreas do painel">
+          <a href="#geral">Visão geral</a>
+          <a href="#catalogo">Produtos e catálogo</a>
+          <a href="#categorias">Categorias</a>
+          <a href="#midias">Biblioteca de imagens</a>
+          <a href="#conteudo">Landing page</a>
+          <a href="#manual">Manual</a>
+          <a href="/paginas/acesso-painel.html?alterar=1" id="alterar-senha-painel" hidden>Senha do painel</a>
+          <a href="#configuracoes" class="somente-admin">Contatos e configurações</a>
+          <a href="#equipe" class="somente-admin">Admin</a>
+          <a href="#contas" class="somente-admin">Contas</a>
+          <a href="#historico" class="somente-admin">Histórico e manutenção</a>
+          <a href="/paginas/acesso-painel.html?destino=banco" class="somente-admin" target="_blank" rel="noopener noreferrer">Tabelas do banco</a>
+        </nav>
+        <a class="voltar-site" href="/">Ver site público</a>
+      </aside>
+      <div class="area-admin">
+        <header class="topo-admin">
+          <span id="pessoa-admin"></span>
+          <button class="botao-secundario" id="sair-admin" type="button">Sair</button>
+        </header>
+        <p id="aviso-admin" class="aviso-admin" role="status" hidden></p>
+        <main id="pagina-admin" class="pagina-admin" aria-busy="true" tabindex="-1"></main>
+      </div>
+    </div>
   </body>
 </html>

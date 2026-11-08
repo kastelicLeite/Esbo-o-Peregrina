@@ -1,0 +1,61 @@
+.aviso-publico {
+  position: fixed;
+  z-index: 1200;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom));
+  width: min(380px, calc(100% - 32px));
+  padding: 18px 46px 18px 20px;
+  border: 1px solid var(--linha);
+  border-left: 4px solid var(--ciano-texto);
+  border-radius: 10px;
+  background: var(--papel);
+  color: var(--tinta);
+  box-shadow: 0 8px 32px rgb(0 0 0 / 16%);
+}
+
+.aviso-publico p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.aviso-publico a {
+  display: inline-block;
+  padding-block: 8px;
+  color: var(--ciano-texto);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.aviso-publico button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: transparent;
+  color: var(--tinta);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.aviso-publico-erro {
+  border-left-color: var(--magenta-texto);
+}
+
+.aviso-item-orcamento:not(:empty) {
+  padding: 12px;
+  border-left: 3px solid var(--ciano-texto);
+  border-radius: 4px;
+  background: var(--ciano-suave);
+  color: var(--tinta);
+}
+
+.aviso-item-orcamento[data-tipo="erro"] {
+  border-left-color: var(--magenta-texto);
+}
+
+[aria-busy="true"] button:disabled {
+  cursor: progress;
+}

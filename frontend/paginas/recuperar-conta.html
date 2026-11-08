@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="referrer" content="no-referrer">
+    <title>Recuperar minha conta | Gráfica Peregrina</title>
+    <link rel="stylesheet" href="/css/principal.css">
+    <link rel="stylesheet" href="/css/paginas/conta.css">
+    <script type="module" src="/js/conta/acesso.js"></script>
+      <link rel="stylesheet" href="/css/base/tema.css">
+    <script src="/js/tema.js"></script>
+  </head>
+  <body>
+    <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+    <header class="conta-cabecalho">
+      <a href="/" aria-label="Gráfica Peregrina, início">
+        <img src="/assets/imagens/logo-peregrina.png" alt="Gráfica Peregrina" width="2159" height="640">
+      </a>
+      <nav aria-label="Navegação">
+        <a href="/paginas/produtos.html">Produtos</a>
+        <a href="/paginas/orcamento.html">Meu carrinho</a>
+        <a data-conta-simples href="/paginas/minha-conta.html" hidden>Minha conta</a>
+        <div class="acesso-visitante" data-acesso-visitante>
+            <a href="/paginas/entrar-conta.html">Entrar</a>
+            <a class="cadastrar-cabecalho" href="/paginas/cadastro.html">Cadastrar</a>
+          </div>
+        <a class="painel-cabecalho" data-painel-admin href="/paginas/painel-admin.html" hidden>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <rect x="3" y="3" width="7" height="7" rx="1"/>
+              <rect x="14" y="3" width="7" height="7" rx="1"/>
+              <rect x="3" y="14" width="7" height="7" rx="1"/>
+              <rect x="14" y="14" width="7" height="7" rx="1"/>
+            </svg>
+            Painel admin
+          </a>
+      </nav>
+    </header>
+    <main tabindex="-1" id="conteudo" class="conta-pagina">
+      <div class="conta-acesso">
+        <h1>Recuperar minha conta</h1>
+        <section class="conta-cartao" data-solicitar>
+          <p>Informe o e-mail da sua conta para receber um código de recuperação.</p>
+          <form class="conta-form" novalidate data-acesso-cliente="recuperacao">
+            <div class="conta-campo">
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" maxlength="180" autocomplete="email" aria-describedby="email-erro" required>
+              <span class="conta-erro" id="email-erro" aria-live="polite"></span>
+            </div>
+            <button class="botao" type="submit">Enviar código</button>
+            <p data-estado role="status" aria-live="polite"></p>
+          </form>
+        </section>
+        <section class="conta-cartao" data-codigo hidden>
+          <h2>Confira seu e-mail</h2>
+          <p>Digite o código de 6 dígitos recebido. Ele é válido por 10 minutos.</p>
+          <form class="conta-form" novalidate>
+            <div class="conta-campo">
+              <span id="codigo-rotulo">Código de recuperação</span>
+              <input id="codigo" name="codigo" type="hidden">
+              <div class="codigo-digitos" data-digitos-codigo role="group" aria-labelledby="codigo-rotulo"></div>
+              <span class="conta-erro" id="codigo-erro" aria-live="polite"></span>
+            </div>
+            <button class="botao" type="submit">Confirmar código</button>
+            <p data-estado role="status" aria-live="polite"></p>
+          </form>
+          <button class="botao-secundario" type="button" data-novo-codigo>Solicitar outro código ou alterar e-mail</button>
+        </section>
+        <section class="conta-cartao" data-redefinir hidden>
+          <h2>Escolha uma nova senha</h2>
+          <form class="conta-form" novalidate data-validar-senha>
+            <div class="conta-campo">
+              <label for="senha">Nova senha</label>
+              <div class="conta-senha">
+                <input id="senha" name="senha" type="password" autocomplete="new-password" aria-describedby="senha-erro" required>
+                <button type="button" data-mostrar-senha="senha" aria-controls="senha" aria-pressed="false" aria-label="Mostrar ou ocultar nova senha">Mostrar</button>
+              </div>
+              <span class="conta-erro" id="senha-erro" aria-live="polite"></span>
+            </div>
+            <p class="conta-ajuda">Use pelo menos 12 caracteres, com letras e números.</p>
+            <div class="conta-campo">
+              <label for="confirmacao">Confirme a nova senha</label>
+              <div class="conta-senha">
+                <input id="confirmacao" name="confirmacao" type="password" autocomplete="new-password" aria-describedby="confirmacao-erro" required>
+                <button type="button" data-mostrar-senha="confirmacao" aria-controls="confirmacao" aria-pressed="false" aria-label="Mostrar ou ocultar confirme a nova senha">Mostrar</button>
+              </div>
+              <span class="conta-erro" id="confirmacao-erro" aria-live="polite"></span>
+            </div>
+            <button class="botao" type="submit">Salvar nova senha</button>
+            <p data-estado role="status" aria-live="polite"></p>
+          </form>
+        </section>
+        <div class="conta-links">
+          <a href="entrar-conta.html">Voltar para entrar</a>
+        </div>
+      </div>
+    </main>
+    <footer class="conta-rodape">
+      <a href="/paginas/privacidade.html">Privacidade e atendimento</a>
+      <a class="painel-rodape" data-painel-admin href="/paginas/painel-admin.html" hidden>Painel admin</a>
+      <a href="/">Voltar ao site</a>
+    </footer>
+  </body>
+</html>
+

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="logo-escuro" x="0" y="0" width="1" height="1"
+      filterUnits="objectBoundingBox" primitiveUnits="objectBoundingBox" color-interpolation-filters="sRGB">
+      <feFlood x="0.24" y="0" width="0.76" height="1" flood-color="white" result="nome-branco" />
+      <feComposite in="nome-branco" in2="SourceGraphic" operator="atop" />
+    </filter>
+  </defs>
+</svg>

@@ -1,0 +1,68 @@
+.privacidade-etiqueta {
+  color: var(--magenta-texto);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+
+.privacidade-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+}
+
+.privacidade-textos {
+  display: grid;
+  gap: 18px;
+  min-width: 0;
+}
+
+.privacidade-textos p {
+  color: var(--cinza);
+  font-size: 14px;
+}
+
+.privacidade-atendimento {
+  min-width: 0;
+}
+
+.privacidade-atendimento select,
+.privacidade-atendimento textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--linha);
+  border-radius: 6px;
+  background: var(--papel);
+  color: var(--tinta);
+  font: inherit;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.privacidade-canais {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.privacidade-canais a {
+  text-align: center;
+  justify-content: center;
+}
+
+.privacidade-adicional {
+  white-space: pre-line;
+}
+
+@media (max-width: 760px) {
+  .privacidade-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .privacidade-atendimento {
+    grid-row: 1;
+  }
+}

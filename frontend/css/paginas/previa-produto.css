@@ -1,0 +1,333 @@
+.dialog-previa-produto {
+  width: min(1600px, calc(100vw - 32px));
+  max-width: none;
+  height: calc(100dvh - 32px);
+  max-height: none;
+  padding: 0;
+  overflow: hidden;
+}
+
+.dialog-previa-produto[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.dialog-previa-produto > .topo-dialog {
+  padding: 16px 24px;
+  margin: 0;
+  border-bottom: 1px solid var(--linha);
+  flex-shrink: 0;
+}
+
+.dialog-previa-produto > .topo-dialog h2 {
+  font-size: 22px;
+}
+
+.dialog-previa-produto > .erro-formulario:empty {
+  display: none;
+}
+
+.editor-previa {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.barra-previa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--linha);
+}
+
+.dialog-previa-produto .orientacao-previa {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.barra-previa > button {
+  flex-shrink: 0;
+}
+
+.corpo-editor-previa {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  flex: 1;
+  min-height: 0;
+}
+
+.previa-editavel {
+  padding: 28px;
+  overflow: auto;
+  min-width: 0;
+  background: var(--papel);
+}
+
+.previa-editavel .corpo-detalhes {
+  gap: 28px;
+}
+
+.previa-editavel .informacoes-detalhes h1 {
+  font-size: clamp(26px, 2.6vw, 42px);
+}
+
+.previa-editavel [hidden], .editor-previa [hidden] {
+  display: none !important;
+}
+
+.painel-previa {
+  padding: 24px;
+  overflow: auto;
+  min-width: 0;
+  border-left: 1px solid var(--linha);
+  background: var(--superficie-suave, #f7fafc);
+}
+
+.painel-previa h2 {
+  font-size: 19px;
+  margin-bottom: 16px;
+  letter-spacing: -.3px;
+}
+
+.painel-previa h3 {
+  font-size: 17px;
+  margin: 20px 0 16px;
+  letter-spacing: -.2px;
+}
+
+.menu-painel-previa {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.menu-painel-previa button {
+  padding: 8px 10px;
+  font-size: 12px;
+  min-height: 40px;
+}
+
+.menu-painel-previa button[aria-current="true"] {
+  background: var(--ciano-suave);
+  border-color: var(--ciano-texto);
+}
+
+.conteudo-painel-previa {
+  display: grid;
+  gap: 16px;
+}
+
+.conteudo-painel-previa p {
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.conteudo-painel-previa .bloco-opcao {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 14px 0;
+  border: 0;
+}
+
+.conteudo-painel-previa .linha-opcao {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 16px 0;
+  border-top: 1px solid var(--linha);
+}
+
+.conteudo-painel-previa .campo-admin {
+  margin: 0;
+}
+
+.conteudo-painel-previa .grupo-painel-previa {
+  padding: 14px 0;
+}
+
+.conteudo-painel-previa summary {
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.conteudo-painel-previa input, .conteudo-painel-previa select, .conteudo-painel-previa textarea {
+  width: 100%;
+  min-height: 44px;
+}
+
+.conteudo-painel-previa input[type="checkbox"] {
+  width: 20px;
+  min-height: 20px;
+  flex-shrink: 0;
+}
+
+.conteudo-painel-previa .acoes-linha {
+  gap: 8px;
+}
+
+.imagens-painel-previa, .tiragens-painel-previa {
+  display: grid;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.imagens-painel-previa li, .tiragens-painel-previa li {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--linha);
+  background: var(--papel);
+  border-radius: 4px;
+}
+
+.imagens-painel-previa img {
+  width: 100%;
+  height: 140px;
+  object-fit: contain;
+  background: var(--superficie-suave, #f1f3f5);
+}
+
+.rodape-previa {
+  padding: 12px 24px;
+  background: var(--papel);
+  border-top: 1px solid var(--linha);
+}
+
+.rodape-previa .acoes-linha {
+  justify-content: end;
+  gap: 8px;
+}
+
+.confirmacao-descarte-previa {
+  padding: 12px;
+  margin-bottom: 12px;
+  border-left: 3px solid var(--magenta);
+  background: var(--superficie-suave, #f7fafc);
+}
+
+.confirmacao-descarte-previa button {
+  margin: 8px 8px 0 0;
+}
+
+.dialog-previa-produto .estado-previa {
+  font-size: 12px;
+  margin: 0 0 10px;
+  color: var(--cinza);
+}
+
+.alvo-edicao-previa {
+  cursor: pointer;
+  outline: 1px solid transparent;
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+
+.alvo-edicao-previa:hover {
+  outline-color: var(--ciano-texto);
+}
+
+.alvo-edicao-previa:focus-visible {
+  outline: 3px solid var(--ciano-texto);
+}
+
+.alvo-edicao-previa [inert] {
+  pointer-events: none;
+}
+
+.imagem-vazia-previa {
+  display: grid;
+  place-items: center;
+  min-height: 240px;
+  background: var(--ciano-suave);
+  border: 1px dashed var(--ciano-texto);
+  color: var(--ciano-texto);
+}
+
+.modo-simulacao .corpo-editor-previa {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.modo-simulacao .previa-editavel > article {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+@media (max-width: 1100px) and (min-width: 901px) {
+  .corpo-editor-previa {
+    grid-template-columns: minmax(0, 1fr) 320px;
+  }
+  .previa-editavel .corpo-detalhes {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .dialog-previa-produto {
+    width: calc(100vw - 16px);
+    height: calc(100dvh - 16px);
+  }
+  .dialog-previa-produto > .topo-dialog {
+    padding: 12px 16px;
+    align-items: center;
+  }
+  .dialog-previa-produto > .topo-dialog h2 {
+    font-size: 18px;
+  }
+  .barra-previa {
+    padding: 12px 16px;
+    align-items: start;
+  }
+  .corpo-editor-previa {
+    display: block;
+    overflow: auto;
+  }
+  .previa-editavel {
+    overflow: visible;
+    padding: 24px 16px;
+  }
+  .painel-previa {
+    overflow: visible;
+    border-left: 0;
+    border-top: 1px solid var(--linha);
+    padding: 20px 16px;
+  }
+  .previa-editavel .corpo-detalhes {
+    grid-template-columns: 1fr;
+  }
+  .rodape-previa {
+    padding: 12px 16px;
+    max-height: 30dvh;
+    overflow: auto;
+  }
+  .rodape-previa .acoes-linha {
+    justify-content: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .corpo-editor-previa {
+    scroll-behavior: auto;
+  }
+}
+
+.lista-compatibilidade {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.lista-compatibilidade button {
+  width: 100%;
+  text-align: left;
+  white-space: normal;
+}
+

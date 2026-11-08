@@ -1,0 +1,81 @@
+.manual-painel {
+  color: var(--tinta);
+  line-height: 1.75;
+}
+
+.manual-painel h1 { margin: 0; }
+.manual-painel h2 { margin: 0 0 16px; line-height: 1.3; }
+.manual-painel h3 { margin: 28px 0 10px; line-height: 1.4; }
+.manual-painel p { margin: 12px 0; }
+.manual-painel li + li { margin-top: 10px; }
+.manual-painel ol, .manual-painel ul { padding-left: 24px; }
+.manual-painel a { color: var(--ciano-texto); text-underline-offset: 4px; }
+.manual-painel a:focus-visible, .manual-painel summary:focus-visible {
+  outline: 2px solid var(--magenta-texto);
+  outline-offset: 4px;
+}
+
+.manual-estrutura {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+  margin-top: 28px;
+}
+
+.manual-indice {
+  min-width: 0;
+  position: sticky;
+  top: 24px;
+  padding: 20px;
+  border: 1px solid var(--linha);
+  border-radius: 10px;
+  background: var(--papel);
+}
+
+.manual-indice h2 { font-size: 18px; }
+.manual-indice nav {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  min-width: 0;
+}
+.manual-indice a {
+  display: block;
+  min-width: 0;
+  padding: 7px 0;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+.manual-artigos { min-width: 0; max-width: 80ch; }
+.manual-artigos section {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--linha);
+  scroll-margin-top: 24px;
+}
+.manual-artigos section:first-child { padding-top: 0; }
+.manual-artigos section:focus { outline: none; }
+.manual-artigos section:focus-visible { outline: 2px solid var(--ciano-texto); outline-offset: 8px; }
+.manual-nota {
+  padding: 16px 20px;
+  border-left: 3px solid var(--ciano-texto);
+  background: var(--ciano-suave);
+  border-radius: 0 8px 8px 0;
+}
+.manual-painel details { padding: 18px 0; border-top: 1px solid var(--linha); }
+.manual-painel summary { font-weight: 700; cursor: pointer; }
+.manual-perfis { margin: 20px 0; }
+.manual-perfis dt { font-weight: 700; margin-top: 16px; }
+.manual-perfis dd { margin: 4px 0 0; }
+
+@media (max-width: 950px) {
+  .manual-estrutura { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .manual-indice { position: static; }
+  .manual-indice nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 20px; }
+}
+
+@media (max-width: 520px) {
+  .manual-indice nav { grid-template-columns: minmax(0, 1fr); }
+  .manual-painel { overflow-wrap: anywhere; }
+  .manual-nota { padding: 14px; }
+}

@@ -1,0 +1,254 @@
+.pagina-orcamento {
+  padding-block: 40px 64px;
+}
+
+.titulo-orcamento {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.titulo-orcamento .sobretitulo {
+  margin-bottom: 12px;
+}
+
+.pagina-orcamento h1 {
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+}
+
+.pagina-orcamento > p {
+  color: var(--cinza);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.layout-orcamento {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  align-items: start;
+  gap: 28px;
+  margin-top: 28px;
+}
+
+#itens-orcamento {
+  display: grid;
+  gap: 18px;
+  min-width: 0;
+}
+
+.item-carrinho {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 22px;
+  border: 1px solid var(--linha);
+  border-radius: 4px;
+}
+
+.imagem-item-carrinho {
+  flex: 0 0 100px;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  background: var(--superficie-suave, #f5f7f8);
+}
+
+.dados-item-carrinho {
+  min-width: 0;
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
+.dados-item-carrinho h2,
+.resumo-carrinho h2,
+.orcamento-vazio h2,
+.dialog-mensagem h2 {
+  font-size: 22px;
+  line-height: 1.3;
+  letter-spacing: -.6px;
+}
+
+.opcoes-item-carrinho {
+  padding-left: 16px;
+  color: var(--cinza);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.quantidade-item-carrinho,
+.unitario-item-carrinho {
+  color: var(--cinza);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.preco-item-carrinho {
+  margin: 12px 0 4px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.acoes-item-carrinho,
+.acoes-mensagem {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.acoes-item-carrinho button,
+.dialog-mensagem button,
+.resumo-carrinho .botao-admin {
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--linha);
+  border-radius: 4px;
+  background: var(--papel);
+  color: var(--ciano-texto);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.acoes-item-carrinho .remover-item-carrinho {
+  color: var(--magenta-texto);
+}
+
+.pagina-orcamento button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.pagina-orcamento button:focus-visible,
+.pagina-orcamento textarea:focus-visible {
+  outline: 3px solid var(--ciano-texto);
+  outline-offset: 3px;
+}
+
+.item-indisponivel {
+  border-left: 3px solid var(--magenta);
+}
+
+.aviso-item-carrinho {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--magenta-texto);
+}
+
+.resumo-carrinho {
+  padding: 24px;
+  background: var(--ciano-suave);
+  border-top: 3px solid var(--ciano);
+  border-radius: 4px;
+}
+
+.resumo-carrinho p {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.resumo-carrinho .valor-carrinho {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -.7px;
+  margin-block: 10px;
+}
+
+.resumo-carrinho > .botao {
+  display: block;
+  width: 100%;
+  margin-top: 24px;
+  padding: 16px;
+  border: 0;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.orcamento-vazio {
+  padding: 36px 24px;
+  border: 1px solid var(--linha);
+  text-align: center;
+}
+
+.orcamento-vazio p {
+  color: var(--cinza);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.dialog-mensagem {
+  width: min(760px, calc(100% - 32px));
+  max-height: calc(100dvh - 32px);
+  padding: 24px;
+  border: 0;
+  border-top: 4px solid var(--ciano);
+  border-radius: 4px;
+  color: var(--tinta);
+  background: var(--papel);
+}
+
+.dialog-mensagem::backdrop {
+  background: rgb(20 25 38 / 65%);
+}
+
+.topo-mensagem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.dialog-mensagem p,
+.dialog-mensagem label {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.dialog-mensagem textarea {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px;
+  border: 1px solid var(--linha);
+  border-radius: 4px;
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.7;
+  resize: vertical;
+  background: var(--papel);
+  color: var(--tinta);
+}
+
+.pagina-orcamento #erro-orcamento {
+  color: var(--magenta-texto);
+}
+
+@media (max-width: 900px) {
+  .layout-orcamento {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .item-carrinho {
+    flex-direction: column;
+    padding: 18px;
+    gap: 16px;
+  }
+
+  .acoes-item-carrinho button {
+    flex: 1;
+  }
+
+  .dialog-mensagem {
+    padding: 18px;
+  }
+}

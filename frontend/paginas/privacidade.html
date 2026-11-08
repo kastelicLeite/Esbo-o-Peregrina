@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="no-referrer">
+    <title>Privacidade e atendimento | Gráfica Peregrina</title>
+    <link rel="stylesheet" href="/css/principal.css">
+    <link rel="stylesheet" href="/css/paginas/conta.css">
+    <link rel="stylesheet" href="/css/paginas/privacidade.css">
+    <link rel="stylesheet" href="/css/base/tema.css">
+    <script src="/js/tema.js"></script>
+    <script type="module" src="/js/privacidade.js"></script>
+  </head>
+  <body>
+    <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+    <header class="conta-cabecalho">
+      <a href="/" aria-label="Gráfica Peregrina, início"><img src="/assets/imagens/logo-peregrina.png" alt="Gráfica Peregrina" width="2159" height="640"></a>
+      <nav aria-label="Navegação">
+        <a href="/paginas/produtos.html">Produtos</a>
+        <a href="/paginas/orcamento.html">Meu carrinho</a>
+        <a data-conta-simples href="/paginas/minha-conta.html" hidden>Minha conta</a>
+        <div class="acesso-visitante" data-acesso-visitante>
+          <a href="/paginas/entrar-conta.html">Entrar</a>
+          <a class="cadastrar-cabecalho" href="/paginas/cadastro.html">Cadastrar</a>
+        </div>
+        <a class="painel-cabecalho" data-painel-admin href="/paginas/painel-admin.html" hidden>Painel admin</a>
+      </nav>
+    </header>
+    <main tabindex="-1" id="conteudo" class="conta-pagina">
+      <p class="privacidade-etiqueta">SEUS DADOS, COM CLAREZA</p>
+      <h1>Privacidade e atendimento</h1>
+      <p class="conta-introducao">Entenda o que fica guardado e como falar com a Peregrina sobre sua conta.</p>
+      <div class="privacidade-layout">
+        <div class="privacidade-textos">
+          <section class="conta-cartao">
+            <h2>O que guardamos</h2>
+            <p>Ao criar uma conta, você informa nome, e-mail e senha. A senha é guardada de forma protegida. Também mantemos o identificador da conta, suas permissões, situação de acesso e os dados necessários para login e recuperação de senha.</p>
+            <p>Esses dados permitem acessar sua conta, manter a segurança e recuperar o acesso. O cadastro não autoriza automaticamente o envio de publicidade.</p>
+          </section>
+          <section class="conta-cartao">
+            <h2>Carrinho, cookies e mensagens</h2>
+            <p>O carrinho e a preferência de tema ficam neste navegador. Um cookie mantém seu acesso enquanto a sessão estiver válida. O catálogo, o carrinho e o atendimento continuam disponíveis sem login.</p>
+            <p>Os e-mails de recuperação são enviados pelo Gmail, que recebe o endereço destinatário e a mensagem com o código temporário. Ao abrir uma conversa com texto preparado, esse texto é compartilhado com o WhatsApp. A mensagem só chega à equipe quando você confirma o envio.</p>
+            <p>No formulário de contato por e-mail, seu nome, endereço para resposta, assunto e mensagem são enviados pelo Gmail para a empresa quando você toca em Enviar mensagem. O formulário não cria uma conta nem guarda a mensagem no banco do site; ela fica na caixa de e-mail da equipe.</p>
+            <p>Abrir o WhatsApp não confirma um pedido. Não existe histórico de compras ou checkout neste site.</p>
+          </section>
+          <section class="conta-cartao">
+            <h2>Proteção e cópias de segurança</h2>
+            <p>O acesso a informações internas é limitado às permissões de cada conta. Mantemos cópias de segurança e registros das alterações feitas pela equipe para proteger e recuperar o funcionamento do site.</p>
+            <p>Cópias anteriores podem conter dados até sua substituição ou descarte. Ao atender um pedido de exclusão, a equipe precisa considerar também as cópias guardadas.</p>
+          </section>
+          <section class="conta-cartao">
+            <h2>Histórico e recomendações</h2>
+            <p>Pesquisas, produtos vistos e orçamentos preparados ajudam a sugerir produtos. Quando você está conectado, os registros ficam na sua conta e podem ser consultados em outros dispositivos. Sem login, ficam apenas neste navegador.</p>
+            <p>Você pode pausar novos registros ou limpar seu histórico. Exibimos as atividades dos últimos 90 dias, com limites por categoria. Orçamentos guardados não confirmam envio, compra ou aprovação. Cópias de segurança podem manter registros anteriores até seu descarte.</p>
+            <a class="link-texto" href="/paginas/historico.html">Gerenciar meu histórico →</a>
+          </section>
+          <section class="conta-cartao">
+            <h2>Consulte, corrija ou solicite exclusão</h2>
+            <p>Você pode consultar seu e-mail e editar seu nome em Minha conta. Para pedir ajuda, consultar outros dados, corrigir informações ou solicitar a exclusão da conta, use o atendimento ao lado.</p>
+            <p>A solicitação não apaga a conta automaticamente. A equipe pode precisar confirmar a titularidade e informará o atendimento do pedido e eventuais dados que precisem ser mantidos.</p>
+            <a class="link-texto" href="https://www.gov.br/anpd/pt-br/assuntos/titular-de-dados/direito-dos-titulares" target="_blank" rel="noopener noreferrer">Saiba mais sobre seus direitos na ANPD →</a>
+          </section>
+          <p id="privacidade-adicional" class="privacidade-adicional" hidden></p>
+        </div>
+        <section class="conta-cartao privacidade-atendimento" id="atendimento">
+          <h2>Como podemos ajudar?</h2>
+          <p><a class="link-texto" href="/paginas/contato.html?assunto=privacidade">Prefere enviar um e-mail direto pelo site? →</a></p>
+          <p id="contato-privacidade"></p>
+          <form id="solicitacao-privacidade" class="conta-form">
+            <div class="conta-campo">
+              <label for="tipo-privacidade">Assunto</label>
+              <select id="tipo-privacidade" name="tipo">
+                <option value="ajuda">Preciso de ajuda</option>
+                <option value="acesso">Quero consultar meus dados</option>
+                <option value="correcao">Quero corrigir meus dados</option>
+                <option value="exclusao">Quero solicitar a exclusão da conta</option>
+              </select>
+            </div>
+            <div class="conta-campo">
+              <label for="email-privacidade">E-mail da conta</label>
+              <input id="email-privacidade" name="email" type="email" autocomplete="email" maxlength="180" required>
+            </div>
+            <div class="conta-campo">
+              <label for="detalhes-privacidade">Detalhes (opcional)</label>
+              <textarea id="detalhes-privacidade" name="detalhes" rows="4" maxlength="1000"></textarea>
+            </div>
+            <button class="botao" type="submit" disabled>Preparar solicitação</button>
+            <p id="estado-privacidade" role="status" aria-live="polite"></p>
+          </form>
+          <button class="botao-secundario" id="recarregar-contato" type="button" hidden>Tentar novamente</button>
+          <section id="previa-solicitacao" hidden>
+            <h3>Confira sua mensagem</h3>
+            <textarea id="mensagem-privacidade" aria-label="Mensagem preparada para o atendimento" rows="7" readonly></textarea>
+            <div class="privacidade-canais">
+              <a id="enviar-privacidade-whatsapp" class="botao" target="_blank" rel="noopener noreferrer" hidden>Continuar no WhatsApp</a>
+              <a id="enviar-privacidade-email" class="botao-secundario" hidden>Abrir no meu e-mail</a>
+            </div>
+          </section>
+        </section>
+      </div>
+    </main>
+    <footer class="conta-rodape"><a href="/">Voltar ao site</a> · <a href="/paginas/minha-conta.html">Minha conta</a></footer>
+  </body>
+</html>

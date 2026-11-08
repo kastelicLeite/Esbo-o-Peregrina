@@ -5,7 +5,23 @@
 
 .abertura {
   padding-block: 72px 48px;
-  border-top: 5px solid var(--ciano);
+}
+
+.abertura.largura {
+  width: 100%;
+  padding-inline: max(48px, calc((100% - 1280px) / 2));
+}
+
+@media (max-width: 1000px) {
+  .abertura.largura {
+    padding-inline: 28px;
+  }
+}
+
+@media (max-width: 700px) {
+  .abertura.largura {
+    padding-inline: 20px;
+  }
 }
 
 .abertura h1 {
@@ -76,6 +92,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 9%;
+}
+
+.introducao-passos {
+  max-width: 380px;
+  color: var(--cinza);
+  font-size: 14px;
+  line-height: 1.7;
+  margin-top: 24px;
 }
 
 .passos {

@@ -2,11 +2,28 @@
   "name": "grafica-peregrina",
   "version": "1.0.0",
   "private": true,
-  "description": "Landing page da Gráfica Peregrina",
+  "description": "Catálogo e painel administrativo da Gráfica Peregrina",
   "scripts": {
-    "start": "node scripts/servidor.cjs"
+    "start": "node --env-file-if-exists=.env scripts/servidor.cjs",
+    "preview": "node --env-file-if-exists=.env scripts/iniciar-site.cjs",
+    "test": "node --test tests/*.test.cjs",
+    "criar-admin": "node --env-file-if-exists=.env scripts/criar-admin.cjs",
+    "recuperar-acesso": "node --env-file-if-exists=.env scripts/recuperar-acesso.cjs",
+    "backup": "node --env-file-if-exists=.env scripts/backup.cjs",
+    "descriptografar-backup": "node --env-file-if-exists=.env scripts/descriptografar-backup.cjs",
+    "restaurar": "node --env-file-if-exists=.env scripts/restaurar.cjs"
   },
   "engines": {
     "node": "24.x"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1164.0",
+    "bcryptjs": "^3.0.3",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.1",
+    "helmet": "^8.3.0",
+    "multer": "^2.4.0",
+    "sharp": "^0.35.5",
+    "tar": "^7.5.22"
   }
 }

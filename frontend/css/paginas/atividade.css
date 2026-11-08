@@ -1,0 +1,109 @@
+.pagina-atividade {
+  width: min(1152px, calc(100% - 40px));
+  margin: 36px auto 72px;
+}
+
+.pagina-atividade h1 {
+  font-size: clamp(30px, 5vw, 44px);
+  margin-block: 12px 16px;
+  letter-spacing: -1px;
+}
+
+.pagina-atividade > p {
+  max-width: 760px;
+  line-height: 1.7;
+}
+
+.atividade-etiqueta,
+.historico-tipo {
+  color: var(--ciano-texto);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.grade-recomendados {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.motivo-recomendacao {
+  margin: 0 0 12px;
+  color: var(--ciano-texto);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.controles-atividade,
+.filtros-historico {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-block: 20px;
+}
+
+.filtros-historico button {
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid var(--linha);
+  border-radius: 6px;
+  background: var(--papel);
+  color: var(--tinta);
+  font: inherit;
+  cursor: pointer;
+}
+
+.filtros-historico button[aria-pressed="true"] {
+  color: var(--ciano-texto);
+  background: var(--ciano-suave);
+  border-color: var(--ciano-texto);
+}
+
+.lista-historico {
+  display: grid;
+  gap: 16px;
+}
+
+.registro-historico {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid var(--linha);
+  border-radius: 10px;
+  background: var(--papel);
+  overflow-wrap: anywhere;
+}
+
+.registro-historico h2 {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.registro-historico time,
+.historico-nota {
+  color: var(--cinza);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.item-historico-orcamento {
+  border-bottom: 1px solid var(--linha);
+  padding-block: 12px;
+}
+
+.item-historico-orcamento h3 {
+  font-size: 15px;
+}
+
+.item-historico-orcamento p {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .motivo-recomendacao { grid-column: 1 / -1; grid-row: 4; margin: 0; }
+  .pagina-atividade { margin-top: 24px; }
+  .registro-historico { padding: 16px; }
+  .filtros-historico { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

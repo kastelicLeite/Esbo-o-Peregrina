@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Tabelas do banco | Gráfica Peregrina</title>
+    <link rel="stylesheet" href="/css/principal.css">
+    <link rel="stylesheet" href="/admin/banco/visualizador.css">
+    <link rel="stylesheet" href="/css/base/tema.css">
+    <script src="/js/tema.js"></script>
+    <script type="module" src="/admin/banco/visualizador.js"></script>
+  </head>
+  <body>
+    <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+    <main tabindex="-1" id="conteudo" class="pagina-banco">
+      <a class="link-texto" href="/paginas/painel-admin.html#geral">Voltar ao painel</a>
+      <header class="titulo-banco">
+        <div>
+          <p class="sobretitulo">GRÁFICA PEREGRINA / ADMINISTRAÇÃO</p>
+          <h1>Tabelas do banco</h1>
+          <p>Visualização dos dados salvos. Atualização automática a cada 2 segundos.</p>
+        </div>
+        <button id="atualizar-banco" type="button">Atualizar agora</button>
+      </header>
+      <div class="controles-banco">
+        <label for="tabela-banco">Tabela
+          <select id="tabela-banco" disabled><option>Carregando…</option></select>
+        </label>
+        <span id="resumo-banco"></span>
+        <span id="estado-banco" role="status">Conectando…</span>
+      </div>
+      <p class="nota-banco">Somente leitura. Senhas e códigos de acesso ficam ocultos. Valores terminados em “centavos” são inteiros: 1093 = R$ 10,93.</p>
+      <p id="erro-banco" role="alert" hidden></p>
+      <form class="busca-banco" id="busca-banco" role="search">
+        <label for="termo-banco">Localizar nesta tabela</label>
+        <div class="acoes-busca-banco">
+          <input id="termo-banco" type="search" maxlength="200" placeholder="Nome, ID ou conteúdo de uma célula…">
+          <button type="submit">Localizar</button>
+          <button id="resultado-anterior-banco" type="button" disabled>Resultado anterior</button>
+          <button id="resultado-proximo-banco" type="button" disabled>Próximo resultado</button>
+        </div>
+        <p id="estado-pesquisa-banco" role="status">A pesquisa leva até o registro sem esconder as outras linhas.</p>
+      </form>
+      <div class="tabela-banco" id="dados-banco" tabindex="0" role="region" aria-label="Dados da tabela selecionada"></div>
+      <nav class="paginacao-banco" aria-label="Paginação da tabela">
+        <button id="anterior-banco" type="button" disabled>Anterior</button>
+        <span id="pagina-banco">Página 1</span>
+        <button id="proxima-banco" type="button" disabled>Próxima</button>
+      </nav>
+    </main>
+  </body>
+</html>

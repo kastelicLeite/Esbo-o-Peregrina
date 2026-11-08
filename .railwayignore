@@ -1,0 +1,16 @@
+node_modules/
+.git/
+.railway/
+.codex/
+.agents/
+.aws/
+.env
+.env.*
+/dados/
+/backups/
+tests/
+docs/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.pid

@@ -1,0 +1,205 @@
+.pagina-minha-conta .conta-pagina {
+  width: min(1080px, calc(100% - 40px));
+  margin: 40px auto 64px;
+}
+
+.pagina-minha-conta .conta-titulo {
+  margin-bottom: 10px;
+}
+
+.pagina-minha-conta .conta-introducao {
+  margin-top: 0;
+  margin-bottom: 28px;
+}
+
+.pagina-minha-conta .painel-minha-conta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas: "dados seguranca" "aparencia seguranca" "atividade atividade";
+  align-items: start;
+  gap: 24px;
+}
+
+.pagina-minha-conta .secao-dados { grid-area: dados; }
+.pagina-minha-conta .secao-seguranca { grid-area: seguranca; }
+.pagina-minha-conta .secao-aparencia { grid-area: aparencia; }
+.pagina-minha-conta .secao-atividade { grid-area: atividade; }
+
+.pagina-minha-conta .conta-cartao {
+  min-width: 0;
+  padding: 28px;
+  border-radius: 12px;
+}
+
+.pagina-minha-conta .conta-cartao h2 {
+  margin: 0 0 12px;
+  font-size: 21px;
+}
+
+.pagina-minha-conta .identidade-conta {
+  padding-block: 6px 20px;
+  border-bottom: 1px solid var(--linha);
+  overflow-wrap: anywhere;
+}
+
+.pagina-minha-conta .nome-titular {
+  margin: 0 0 4px;
+  color: var(--tinta);
+  font-size: clamp(24px, 3vw, 30px);
+  font-weight: 700;
+  letter-spacing: -.6px;
+}
+
+.pagina-minha-conta .conta-email {
+  margin: 0 0 12px;
+  color: var(--tinta);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.pagina-minha-conta .identificador-conta {
+  margin: 0;
+  color: var(--cinza);
+  font-size: 12px;
+}
+
+.pagina-minha-conta .conta-form {
+  margin-top: 20px;
+  gap: 16px;
+}
+
+.pagina-minha-conta .conta-form .conta-ajuda {
+  margin: -4px 0 0;
+}
+
+.pagina-minha-conta .conta-form .botao {
+  width: fit-content;
+  min-width: 160px;
+  border-radius: 6px;
+}
+
+.pagina-minha-conta .preferencia-tema {
+  min-width: 0;
+  margin: 20px 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.pagina-minha-conta .preferencia-tema legend {
+  padding: 0;
+  margin-bottom: 10px;
+  color: var(--tinta);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pagina-minha-conta .seletor-tema {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  padding: 5px;
+  border: 1px solid var(--linha);
+  border-radius: 10px;
+  background: var(--superficie-suave);
+}
+
+.pagina-minha-conta .seletor-tema button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 48px;
+  gap: 8px;
+  padding: 10px 8px;
+  border: 2px solid transparent;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--tinta);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.pagina-minha-conta .seletor-tema button[aria-pressed="true"] {
+  border-color: var(--ciano-texto);
+  background: var(--ciano-suave);
+  color: var(--ciano-texto);
+  font-weight: 700;
+}
+
+.pagina-minha-conta .tema-marcador {
+  visibility: hidden;
+}
+
+.pagina-minha-conta [aria-pressed="true"] .tema-marcador {
+  visibility: visible;
+}
+
+.pagina-minha-conta .seletor-tema button:focus-visible {
+  outline: 2px solid var(--magenta-texto);
+  outline-offset: 3px;
+}
+
+.pagina-minha-conta .estado-tema:empty {
+  display: none;
+}
+
+.pagina-minha-conta .grupos-atividade {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.pagina-minha-conta .grupos-atividade > div {
+  min-width: 0;
+}
+
+.pagina-minha-conta .grupos-atividade h3 {
+  margin-block: 10px;
+  font-size: 16px;
+}
+
+.pagina-minha-conta .grupos-atividade p {
+  color: var(--cinza);
+  font-size: 14px;
+}
+
+.pagina-minha-conta .botao-historico-conta {
+  width: fit-content;
+  padding: 13px 18px;
+}
+
+.pagina-minha-conta .encerrar-sessao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--linha);
+}
+
+.pagina-minha-conta .encerrar-sessao p {
+  margin: 0;
+  color: var(--cinza);
+  font-size: 13px;
+}
+
+.pagina-minha-conta .encerrar-sessao .conta-sair {
+  margin: 0;
+  border-radius: 6px;
+}
+
+@media (max-width: 760px) {
+  .pagina-minha-conta .conta-pagina { margin-top: 28px; }
+  .pagina-minha-conta .painel-minha-conta {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "dados" "seguranca" "aparencia" "atividade";
+    gap: 18px;
+  }
+  .pagina-minha-conta .grupos-atividade { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .pagina-minha-conta .conta-cartao { padding: 22px 18px; }
+  .pagina-minha-conta .conta-form .botao,
+  .pagina-minha-conta .botao-historico-conta { width: 100%; min-width: 0; }
+}

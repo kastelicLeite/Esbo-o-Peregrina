@@ -1,0 +1,1 @@
+ALTER TABLE produtos ADD COLUMN estoque INTEGER CHECK (estoque IS NULL OR estoque BETWEEN 0 AND 10000000);

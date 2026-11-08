@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="referrer" content="no-referrer">
+    <title>Meu histórico | Gráfica Peregrina</title>
+    <link rel="stylesheet" href="/css/principal.css">
+    <link rel="stylesheet" href="/css/paginas/conta.css">
+    <link rel="stylesheet" href="/css/paginas/atividade.css">
+    <link rel="stylesheet" href="/css/base/tema.css">
+    <script src="/js/tema.js"></script>
+    <script type="module" src="/js/historico/pagina.js"></script>
+  </head>
+  <body>
+    <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+    <header class="conta-cabecalho">
+      <a href="/" aria-label="Gráfica Peregrina, início"><img src="/assets/imagens/logo-peregrina.png" alt="Gráfica Peregrina" width="2159" height="640"></a>
+      <nav aria-label="Navegação">
+        <a href="/paginas/produtos.html">Produtos</a>
+        <a href="/paginas/recomendados.html">Recomendados</a>
+        <a href="/paginas/historico.html" aria-current="page">Histórico</a>
+        <a data-conta-simples href="/paginas/minha-conta.html" hidden>Minha conta</a>
+        <div class="acesso-visitante" data-acesso-visitante><a href="/paginas/entrar-conta.html">Entrar</a><a href="/paginas/cadastro.html">Cadastrar</a></div>
+        <a data-painel-admin href="/paginas/painel-admin.html" hidden>Painel admin</a>
+      </nav>
+    </header>
+    <main tabindex="-1" id="conteudo" class="pagina-atividade">
+      <p class="atividade-etiqueta">SUA ATIVIDADE</p>
+      <h1>Meu histórico</h1>
+      <p id="origem-historico">Consultando onde seu histórico está guardado…</p>
+      <p class="historico-nota">Guardamos as atividades recentes por até 90 dias, dentro dos limites de cada categoria. Orçamentos são registros de preparo, sem confirmação de envio ou pedido. Limpar o histórico não altera o carrinho; cópias anteriores seguem a política de backups.</p>
+      <div class="controles-atividade">
+        <button type="button" id="pausar-historico" class="botao-secundario" disabled>Pausar histórico</button>
+        <button type="button" id="limpar-historico" class="botao-secundario" disabled>Limpar todo o histórico</button>
+      </div>
+      <div class="filtros-historico" aria-label="Categorias do histórico">
+        <button type="button" data-tipo-historico="todos" aria-pressed="true" aria-controls="lista-historico">Tudo</button>
+        <button type="button" data-tipo-historico="pesquisa" aria-pressed="false" aria-controls="lista-historico">Pesquisas</button>
+        <button type="button" data-tipo-historico="visualizacao" aria-pressed="false" aria-controls="lista-historico">Visualizados</button>
+        <button type="button" data-tipo-historico="orcamento" aria-pressed="false" aria-controls="lista-historico">Orçamentos</button>
+      </div>
+      <p id="estado-historico" role="status">Carregando seu histórico…</p>
+      <button type="button" id="tentar-historico" class="botao-secundario" hidden>Tentar novamente</button>
+      <div id="lista-historico" class="lista-historico"></div>
+    </main>
+    <footer class="conta-rodape"><a href="/">Voltar ao site</a> · <a href="/paginas/privacidade.html">Privacidade e atendimento</a></footer>
+  </body>
+</html>

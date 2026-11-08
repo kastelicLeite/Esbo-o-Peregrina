@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Acesso ao painel | Gráfica Peregrina</title>
+    <link rel="stylesheet" href="/css/principal.css">
+    <link rel="stylesheet" href="/css/paginas/conta.css">
+    <link rel="stylesheet" href="/css/base/tema.css">
+    <script src="/js/tema.js"></script>
+    <script type="module" src="/js/admin/acesso-painel.js"></script>
+  </head>
+  <body>
+    <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+    <header class="conta-cabecalho">
+      <a href="/" aria-label="Gráfica Peregrina, início">
+        <img src="/assets/imagens/logo-peregrina.png" alt="Gráfica Peregrina" width="2159" height="640">
+      </a>
+      <nav aria-label="Navegação"><a href="/paginas/produtos.html">Voltar aos produtos</a></nav>
+    </header>
+    <main tabindex="-1" id="conteudo" class="conta-pagina conta-acesso">
+      <section class="conta-cartao" aria-labelledby="titulo-acesso">
+        <h1 id="titulo-acesso">Acesso ao painel</h1>
+        <p id="orientacao-acesso">Conferindo seu acesso…</p>
+        <form class="conta-form" id="senha-painel" hidden>
+          <div class="conta-campo" id="campo-senha-atual" hidden>
+            <label for="senha-atual-painel">Senha atual do painel</label>
+            <input id="senha-atual-painel" name="senha_atual" type="password" autocomplete="off">
+          </div>
+          <div class="conta-campo">
+            <label for="senha-compartilhada" id="rotulo-senha-painel">Senha do painel</label>
+            <div class="conta-senha">
+              <input id="senha-compartilhada" name="senha" type="password" autocomplete="off" required aria-describedby="estado-acesso">
+              <button type="button" data-mostrar-senha="senha-compartilhada" aria-controls="senha-compartilhada" aria-pressed="false">Mostrar</button>
+            </div>
+          </div>
+          <div class="conta-campo" id="campo-confirmacao-painel" hidden>
+            <label for="confirmacao-painel">Confirme a senha do painel</label>
+            <input id="confirmacao-painel" name="confirmacao" type="password" autocomplete="new-password">
+          </div>
+          <button type="submit" class="botao" id="confirmar-acesso">Entrar no painel</button>
+        </form>
+        <p id="estado-acesso" role="status" aria-live="polite"></p>
+        <p><a id="voltar-painel" href="/paginas/painel-admin.html" hidden>Voltar ao painel</a></p>
+        <p><a href="/paginas/minha-conta.html">Minha conta</a></p>
+      </section>
+    </main>
+  </body>
+</html>

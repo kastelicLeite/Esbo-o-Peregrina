@@ -1,0 +1,337 @@
+.pagina-login {
+  background: var(--superficie-suave, #fafbfc);
+}
+
+.pagina-login .conta-cabecalho {
+  background: var(--papel);
+  border-bottom: 1px solid var(--linha);
+}
+
+.login-pagina {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: min(1100px, calc(100% - 64px));
+  margin: 48px auto;
+  overflow: hidden;
+  border: 1px solid var(--linha);
+  border-radius: 20px;
+  background: var(--papel);
+  box-shadow: 0 12px 40px rgb(20 42 50 / 5%);
+}
+
+.login-apresentacao {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 44px;
+  overflow: hidden;
+  background: var(--ciano-suave);
+}
+
+.login-etiqueta {
+  margin: 0 0 20px;
+  color: var(--ciano-texto);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  line-height: 1.6;
+}
+
+.login-apresentacao h2 {
+  font-size: clamp(38px, 4.4vw, 56px);
+  font-weight: 600;
+  letter-spacing: -2px;
+  line-height: 1.05;
+}
+
+.login-apresentacao h2 span {
+  color: var(--magenta-texto);
+}
+
+.login-descricao {
+  margin: 22px 0 0;
+  color: var(--cinza);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.login-ilustracao {
+  position: relative;
+  width: 270px;
+  height: 250px;
+  margin: 32px auto 14px;
+}
+
+.login-folha {
+  position: absolute;
+  width: 188px;
+  height: 224px;
+  left: 40px;
+  top: 8px;
+  border-radius: 3px;
+}
+
+.login-folha-ciano {
+  background: var(--ciano);
+  transform: rotate(-16deg) translate(-15px, 6px);
+}
+
+.login-folha-magenta {
+  background: var(--magenta-texto);
+  transform: rotate(13deg) translate(18px, -2px);
+}
+
+.login-folha-frente {
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+  background: var(--papel);
+  transform: rotate(-4deg);
+  box-shadow: 0 8px 18px rgb(0 0 0 / 12%);
+}
+
+.login-marca-impressao,
+.login-arte-rodape {
+  font-size: 6px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.login-arte-texto {
+  margin-top: 21px;
+  font-size: 32px;
+  line-height: .96;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+}
+
+.login-arte-texto > span {
+  color: var(--magenta-texto);
+}
+
+.login-amostras {
+  display: flex;
+  gap: 4px;
+  margin-top: auto;
+  margin-bottom: 12px;
+}
+
+.login-amostras i {
+  width: 25px;
+  height: 9px;
+  background: var(--ciano);
+}
+
+.login-amostras i:nth-child(2) {
+  background: var(--magenta-texto);
+}
+
+.login-amostras i:nth-child(3) {
+  background: #fff000;
+}
+
+.login-amostras i:nth-child(4) {
+  background: #141414;
+}
+
+.login-assinatura {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: auto 0 0;
+  padding-top: 16px;
+  color: var(--cinza);
+  font-size: 11px;
+}
+
+.login-assinatura > span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ciano);
+}
+
+.login-acesso {
+  display: flex;
+  align-items: center;
+  padding: 44px;
+}
+
+.login-formulario {
+  width: 100%;
+}
+
+.login-icone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 24px;
+  border: 1px solid #eed8e5;
+  border-radius: 14px;
+  background: var(--superficie-suave, #fcf2f8);
+  color: var(--magenta-texto);
+}
+
+.login-acesso .login-etiqueta {
+  margin-bottom: 10px;
+  color: var(--magenta-texto);
+}
+
+.login-acesso h1 {
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 600;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+.login-boas-vindas {
+  margin: 13px 0 28px;
+  color: var(--cinza);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.login-acesso .conta-form {
+  margin-top: 0;
+  gap: 18px;
+}
+
+.login-acesso .conta-campo input {
+  min-height: 50px;
+  border-radius: 7px;
+}
+
+.login-acesso input::placeholder {
+  color: var(--cinza);
+  font-size: 13px;
+}
+
+.login-acesso .conta-senha {
+  border-radius: 7px;
+}
+
+.login-acesso .conta-senha button {
+  border-left: 0;
+  padding-inline: 14px;
+}
+
+.login-recuperar {
+  justify-self: end;
+  margin-top: -6px;
+  color: var(--magenta-texto);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.login-acesso .conta-form .botao {
+  justify-content: space-between;
+  border-radius: 7px;
+  padding-inline: 18px;
+  min-height: 50px;
+}
+
+.login-acesso .botao > span {
+  font-size: 21px;
+}
+
+.login-acesso [data-estado]:empty {
+  display: none;
+}
+
+.login-cadastro {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--linha);
+  font-size: 13px;
+}
+
+.login-cadastro p {
+  margin: 0 0 10px;
+  color: var(--cinza);
+}
+
+.login-cadastro a {
+  display: flex;
+  justify-content: space-between;
+  color: var(--tinta);
+  font-weight: 700;
+}
+
+.login-sem-conta {
+  margin: 28px 0 0;
+  color: var(--cinza);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.login-sem-conta a {
+  color: var(--ciano-texto);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.login-recuperar:hover, .login-cadastro a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.pagina-login .conta-rodape {
+  background: var(--papel);
+  font-size: 12px;
+}
+
+@media (max-width: 850px) {
+  .login-pagina {
+    width: calc(100% - 40px);
+    margin-block: 28px;
+  }
+  .login-apresentacao, .login-acesso {
+    padding: 28px;
+  }
+  .login-ilustracao {
+    transform: scale(.85);
+    transform-origin: center;
+    width: 235px;
+  }
+}
+
+@media (max-width: 640px) {
+  .pagina-login .conta-cabecalho {
+    gap: 18px;
+    padding-block: 20px;
+  }
+  .login-pagina {
+    grid-template-columns: 1fr;
+    margin-block: 24px;
+    border-radius: 14px;
+  }
+  .login-apresentacao {
+    padding: 24px;
+  }
+  .login-apresentacao h2 {
+    font-size: 34px;
+    letter-spacing: -1px;
+  }
+  .login-apresentacao h2 br {
+    display: none;
+  }
+  .login-apresentacao .login-etiqueta {
+    margin-bottom: 12px;
+    font-size: 9px;
+  }
+  .login-descricao {
+    margin-top: 14px;
+    font-size: 13px;
+  }
+  .login-ilustracao, .login-assinatura {
+    display: none;
+  }
+  .login-acesso {
+    padding: 28px 24px;
+  }
+  .login-icone {
+    display: none;
+  }
+}

@@ -1,0 +1,55 @@
+.pagina-acesso {
+  width: min(460px, calc(100% - 40px));
+  margin: 60px auto;
+  padding: 28px;
+  border: 1px solid var(--linha);
+  border-top: 4px solid var(--magenta);
+}
+
+.pagina-acesso img {
+  width: 240px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 28px;
+}
+
+.pagina-acesso h1 {
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.pagina-acesso p {
+  color: var(--cinza);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.pagina-acesso form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pagina-acesso input {
+  padding: 12px;
+  border: 1px solid var(--cinza);
+  color: var(--tinta);
+  font: inherit;
+}
+
+.pagina-acesso input:focus-visible,
+.pagina-acesso button:focus-visible {
+  outline: 3px solid var(--ciano-texto);
+  outline-offset: 3px;
+}
+
+.pagina-acesso button {
+  justify-content: center;
+  border: 0;
+  cursor: pointer;
+}
+
+.pagina-acesso .erro-acesso {
+  color: var(--magenta-texto);
+}

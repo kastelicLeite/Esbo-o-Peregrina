@@ -1,0 +1,114 @@
+.conta-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.conta-titulo h1 {
+  margin: 0;
+}
+
+.conta-tema {
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid var(--linha);
+  border-radius: 7px;
+  background: var(--papel);
+  color: var(--tinta);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.conta-tema:hover,
+.conta-tema[aria-pressed="true"] {
+  background: var(--ciano-suave);
+  border-color: var(--ciano-texto);
+  color: var(--ciano-texto);
+}
+
+.conta-tema:focus-visible,
+.conta-sair:focus-visible {
+  outline: 2px solid var(--ciano-texto);
+  outline-offset: 3px;
+}
+
+:root[data-tema="escuro"] {
+  color-scheme: dark;
+  --papel: #191c24;
+  --tinta: #f0f2f7;
+  --cinza: #b9bfce;
+  --linha: #414858;
+  --borda-controle: #929bac;
+  --ciano-texto: #71d9f8;
+  --ciano-suave: #163b49;
+  --magenta-texto: #ff8bcc;
+  --magenta-suave: #422337;
+  --amarelo-suave: #383519;
+  --superficie-suave: #242934;
+}
+
+[data-tema="escuro"] body {
+  background: #11141b;
+}
+
+[data-tema="escuro"] .conta-cabecalho {
+  background: var(--papel);
+}
+
+[data-tema="escuro"] img[src$="logo-peregrina.png"] {
+  filter: url('/assets/imagens/filtros-logo.svg#logo-escuro');
+}
+
+[data-tema="escuro"] .conta-form .botao,
+[data-tema="escuro"] #entrar-novamente .botao {
+  background: #ae0066;
+  color: white;
+}
+
+[data-tema="escuro"] .conta-form .botao:hover,
+[data-tema="escuro"] #entrar-novamente .botao:hover {
+  background: #85004e;
+}
+
+[data-tema="escuro"] .conta-cabecalho .painel-cabecalho {
+  background: #163b49;
+  border-color: var(--ciano-texto);
+  color: var(--ciano-texto);
+}
+
+[data-tema="escuro"] .conta-sair {
+  color: var(--tinta);
+}
+
+[data-tema="escuro"] .botao,
+[data-tema="escuro"] .detalhes-produto .orcamento-direto,
+[data-tema="escuro"] .cabecalho .orcamento-cabecalho {
+  background: #ae0066;
+  color: white;
+}
+
+[data-tema="escuro"] .botao:hover,
+[data-tema="escuro"] .detalhes-produto .orcamento-direto:hover,
+[data-tema="escuro"] .cabecalho .orcamento-cabecalho:hover {
+  background: #85004e;
+}
+
+[data-tema="escuro"] .cabecalho .painel-cabecalho {
+  background: #163b49;
+  border-color: var(--ciano-texto);
+  color: var(--ciano-texto);
+}
+
+[data-tema="escuro"] .detalhes-produto .adicionar-orcamento {
+  background: transparent;
+  color: var(--magenta-texto);
+  border-color: var(--magenta-texto);
+}
+
+[data-tema="escuro"] .detalhes-produto .adicionar-orcamento:hover {
+  background: var(--magenta-suave);
+}

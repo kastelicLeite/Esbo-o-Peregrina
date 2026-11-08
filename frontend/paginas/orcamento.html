@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Conheça os produtos cadastrados da Gráfica Peregrina e solicite um orçamento pelo WhatsApp."
+    >
+    <meta name="theme-color" content="#00afe3">
+    <title>Meu carrinho | Gráfica Peregrina</title>
+
+    <link rel="stylesheet" href="../css/principal.css">
+    <link rel="stylesheet" href="../css/paginas/catalogo.css">
+    <link rel="stylesheet" href="../css/paginas/orcamento.css">
+    <script type="module" src="../js/orcamento/pagina.js"></script>
+      <link rel="stylesheet" href="/css/base/tema.css">
+    <script src="/js/tema.js"></script>
+  </head>
+
+  <body>
+    <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="cabecalho">
+      <div class="largura cabecalho-conteudo">
+        <a class="marca" href="/" aria-label="Gráfica Peregrina, sobre">
+          <img src="../assets/imagens/logo-peregrina.png" alt="Gráfica Peregrina" width="2159" height="640" >
+        </a>
+        <form class="busca-cabecalho" role="search" aria-label="Buscar no catálogo" action="/paginas/produtos.html" method="get">
+          <label class="rotulo-busca-cabecalho" for="pesquisa-cabecalho">
+            Pesquisar produtos
+          </label>
+          <input id="pesquisa-cabecalho" name="q" type="search" placeholder="Pesquisar produtos" maxlength="180" autocomplete="off" >
+          <button type="submit" aria-label="Buscar produtos" title="Buscar produtos">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <circle cx="10.5" cy="10.5" r="6.5"/>
+              <path d="m16 16 4.5 4.5"/>
+            </svg>
+          </button>
+        </form>
+        <div class="cabecalho-acoes">
+          <a
+            class="botao orcamento-cabecalho"
+            data-orcamento
+            href="/#contato"
+            aria-label="Pedir orçamento pelo WhatsApp"
+            title="Pedir orçamento pelo WhatsApp"
+          >
+            <img class="logo-whatsapp-botao" src="/assets/imagens/whatsapp-simbolo.svg" alt="" width="20" height="20">
+            <span>
+              Pedir orçamento
+            </span>
+          </a>
+          <a class="acesso-orcamento" href="/paginas/orcamento.html" aria-label="Meu carrinho, 0 itens" title="Meu carrinho">
+            <svg
+              class="icone-carrinho"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M3 3h2l3 12h11l3-9H6"/>
+              <path d="M8 15l-1 3h12"/>
+              <circle cx="9" cy="21" r="1"/>
+              <circle cx="18" cy="21" r="1"/>
+            </svg>
+            <span class="rotulo-carrinho">
+              Meu carrinho
+            </span>
+            <span data-contador-orcamento>
+              0
+            </span>
+          </a>
+          <div class="acesso-visitante" data-acesso-visitante>
+            <a href="/paginas/entrar-conta.html">Entrar</a>
+            <a class="cadastrar-cabecalho" href="/paginas/cadastro.html">Cadastrar</a>
+          </div>
+          <a
+            class="conta-cabecalho-acesso"
+            data-conta-cabecalho
+            hidden
+            href="/paginas/minha-conta.html"
+            aria-label="Minha conta"
+            title="Minha conta"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <circle cx="12" cy="8" r="3.5"/>
+              <path d="M5 21v-2a7 7 0 0 1 14 0v2"/>
+            </svg>
+            <span class="conta-cabecalho-texto">
+              <span data-estado-conta>
+              </span>
+            </span>
+          </a>
+        </div>
+        <button class="menu-cabecalho-botao" type="button" aria-label="Abrir menu" aria-controls="menu-cabecalho" aria-expanded="false" hidden>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+        <nav class="navegacao-cabecalho" id="menu-cabecalho" aria-label="Navegação principal">
+          <details class="categorias-cabecalho">
+            <summary>Categorias</summary>
+            <div class="lista-categorias-cabecalho" aria-label="Categorias de produtos">
+              <p role="status">Carregando categorias…</p>
+            </div>
+          </details>
+          <a href="/paginas/produtos.html">
+            Produtos
+          </a>
+          <a href="/#como-pedir">
+            Como pedir
+          </a>
+          <a class="sobre-cabecalho" href="/">
+            Sobre
+          </a>
+          <a class="painel-cabecalho" data-painel-admin href="/paginas/painel-admin.html" hidden>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <rect x="3" y="3" width="7" height="7" rx="1"/>
+              <rect x="14" y="3" width="7" height="7" rx="1"/>
+              <rect x="3" y="14" width="7" height="7" rx="1"/>
+              <rect x="14" y="14" width="7" height="7" rx="1"/>
+            </svg>
+            Painel admin
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main tabindex="-1" class="pagina-orcamento largura" id="conteudo">
+      <div class="titulo-orcamento">
+        <div><p class="sobretitulo">GRÁFICA PEREGRINA</p><h1>Meu carrinho</h1></div>
+        <a class="link-texto" href="/paginas/produtos.html">Continuar escolhendo produtos</a>
+      </div>
+      <p>Reúna seus produtos e solicite tudo em uma única conversa pelo WhatsApp.</p>
+      <p id="estado-orcamento" role="status">Conferindo seu orçamento…</p>
+      <p id="erro-orcamento" role="alert" hidden></p>
+      <button id="revalidar-orcamento" type="button" class="botao-admin" hidden>Tentar novamente</button>
+      <div class="layout-orcamento">
+        <section id="itens-orcamento" aria-label="Itens do orçamento" aria-busy="true"></section>
+        <aside class="resumo-carrinho" id="resumo-carrinho" aria-labelledby="titulo-resumo" hidden>
+          <h2 id="titulo-resumo">Resumo</h2>
+          <p id="contagem-orcamento"></p>
+          <p class="rotulo-total" id="rotulo-subtotal"></p>
+          <p class="valor-carrinho" id="valor-subtotal"></p>
+          <p id="itens-sem-preco"></p>
+          <button class="botao" id="solicitar-orcamento" type="button">Solicitar orçamento pelo WhatsApp</button>
+          <p id="aviso-revisao-orcamento">Os valores e a disponibilidade serão conferidos antes de abrir a conversa.</p>
+          <button class="botao-admin" id="limpar-orcamento" type="button">Limpar carrinho</button>
+        </aside>
+      </div>
+      <dialog id="mensagem-orcamento" class="dialog-mensagem" aria-labelledby="titulo-mensagem-orcamento">
+        <div class="topo-mensagem">
+          <h2 id="titulo-mensagem-orcamento">Revise sua solicitação</h2>
+          <button id="fechar-mensagem" type="button">Fechar</button>
+        </div>
+        <p id="instrucoes-mensagem"></p>
+        <label for="resumo-whatsapp">Mensagem completa</label>
+        <textarea id="resumo-whatsapp" readonly rows="12"></textarea>
+        <p id="estado-copia" role="status"></p>
+        <div class="acoes-mensagem">
+          <button id="copiar-orcamento" type="button">Copiar resumo completo</button>
+          <a class="botao" id="abrir-whatsapp" target="_blank" rel="noopener noreferrer">Abrir WhatsApp</a>
+        </div>
+      </dialog>
+    </main>
+
+    <footer class="rodape">
+      <div class="largura">
+        <div class="rodape-principal">
+          <div class="rodape-marca">
+            <a class="nome-rodape" href="/">Gráfica Peregrina<span aria-hidden="true">.</span></a>
+            <p>Do papel ao acabamento, encontre o impresso que você precisa.</p>
+          </div>
+
+          <nav class="rodape-navegacao" aria-label="Navegação do rodapé">
+            <h2>Explore</h2>
+            <a href="/">Sobre</a>
+            <a href="/paginas/produtos.html">Produtos</a>
+            <a href="/#como-pedir">Como pedir</a>
+          </nav>
+
+          <div class="rodape-atendimento">
+            <h2>Vamos falar do seu projeto?</h2>
+            <p>Conte o que precisa e solicite um orçamento com a nossa equipe.</p>
+            <a class="rodape-whatsapp" data-orcamento href="https://wa.me/5511911116541"><span class="icone-whatsapp-rodape" aria-hidden="true"></span><span>Conversar pelo WhatsApp</span></a>
+            <a class="rodape-instagram" data-instagram href="https://instagram.com/graficaperegrina" target="_blank" rel="noopener noreferrer"><img src="/assets/imagens/instagram.png" alt="" width="20" height="20"><span>Instagram · @graficaperegrina</span></a>
+          </div>
+        </div>
+
+        <div class="rodape-base">
+          <p>Gráfica Peregrina <span aria-hidden="true">·</span> Todos os direitos reservados.</p>
+          <div class="rodape-utilitarios">
+            <a class="painel-rodape" data-painel-admin href="/paginas/painel-admin.html" hidden>Painel admin</a>
+            <a href="/paginas/historico.html">Meu histórico</a>
+            <a href="/paginas/recomendados.html">Recomendados</a>
+            <span class="rodape-versao" data-versao-site>Versão 1.0.0</span>
+          </div>
+        </div>
+        <div class="rodape-privacidade" data-privacidade-rodape><a href="/paginas/contato.html">Contato por e-mail</a> · <a href="/paginas/privacidade.html">Privacidade e atendimento</a></div>
+        <p class="credito-desenvolvedor">Desenvolvido por Arthur Kastelic Leite</p>
+      </div>
+    </footer>
+
+    <a
+      class="whatsapp-fixo"
+      data-orcamento
+      href="/#contato"
+      aria-label="Conversar com a Gráfica Peregrina pelo WhatsApp"
+    >
+      <img src="/assets/imagens/whatsapp-simbolo.svg" alt="" width="32" height="32">
+    </a>
+  </body>
+</html>

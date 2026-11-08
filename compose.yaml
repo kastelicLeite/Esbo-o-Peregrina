@@ -1,0 +1,21 @@
+services:
+  site:
+    build: .
+    restart: unless-stopped
+    init: true
+    ports:
+      - "127.0.0.1:3000:3000"
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: 3000
+      PASTA_DADOS: /data
+      PASTA_BACKUPS: /data/backups
+    volumes:
+      - dados-peregrina:/data
+    stop_grace_period: 30s
+
+volumes:
+  dados-peregrina:

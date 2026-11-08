@@ -1,40 +1,250 @@
 .rodape {
-  border-top: 4px solid var(--magenta);
-  padding-block: 30px;
-  padding-bottom: calc(100px + env(safe-area-inset-bottom));
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
+  margin-top: 48px;
+  border-top: 5px solid transparent;
+  border-color: var(--ciano);
+  background: var(--ciano-suave);
+  padding-top: 56px;
+  padding-bottom: calc(96px + env(safe-area-inset-bottom));
+}
+
+.rodape-principal {
+  display: grid;
+  grid-template-columns: 1.4fr .7fr 1fr;
+  gap: 56px;
+  padding-bottom: 40px;
 }
 
 .nome-rodape {
-  color: var(--magenta-texto);
-  font-size: 17px;
+  display: inline-block;
+  font-size: clamp(22px, 2.4vw, 30px);
   font-weight: 700;
-  letter-spacing: -.5px;
+  letter-spacing: -1px;
 }
 
-.rodape > span {
+.nome-rodape span {
+  color: var(--magenta-texto);
+}
+
+.rodape p {
+  margin: 14px 0 0;
+  color: var(--cinza);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.rodape .credito-desenvolvedor {
+  margin-top: 20px;
+  color: var(--cinza);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.rodape-marca p {
+  max-width: 320px;
+}
+
+.rodape h2 {
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.rodape-navegacao {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.rodape-whatsapp {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin-top: 18px;
+  color: var(--magenta-texto);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.rodape-whatsapp:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.icone-whatsapp-rodape {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  background: #128c4a;
+  mask: url('/assets/imagens/whatsapp-simbolo.svg') center / contain no-repeat;
+}
+
+.rodape-instagram {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin-top: 18px;
+  color: var(--magenta-texto);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.rodape-instagram img,
+.contato-instagram img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.contato-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rodape-instagram:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.rodape-base {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 24px;
+  border-top: 1px solid #b9dce6;
+}
+
+.rodape-base p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.rodape-base p span {
+  padding-inline: 6px;
+}
+
+.rodape-utilitarios {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.rodape-versao {
+  color: var(--ciano-texto);
   font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .3px;
+}
+
+.rodape .botao-admin {
+  background: transparent;
+  color: var(--cinza);
+  border: 0;
+  border-radius: 3px;
+  padding: 6px 4px;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.rodape .botao-admin:hover {
+  background: transparent;
+  color: var(--ciano-texto);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.rodape .botao-admin:focus-visible {
+  outline: 2px solid var(--ciano-texto);
+  outline-offset: 3px;
+}
+
+.rodape-privacidade details {
+  margin-top: 20px;
+  max-width: 720px;
+  font-size: 12px;
   color: var(--cinza);
 }
 
-.rodape nav {
-  font-size: 12px;
-  gap: 20px;
+.rodape-privacidade summary {
+  cursor: pointer;
+}
+
+.rodape-privacidade p {
+  white-space: pre-line;
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 1000px) {
-  .rodape {
-    flex-wrap: wrap;
+  .rodape-principal {
+    gap: 32px;
+    grid-template-columns: 1.2fr .7fr 1fr;
   }
 }
 
 @media (max-width: 700px) {
   .rodape {
-    align-items: start;
+    padding-top: 36px;
+    margin-top: 28px;
+  }
+
+  .rodape-principal {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-bottom: 30px;
+  }
+
+  .rodape-navegacao {
+    flex-flow: row wrap;
+    column-gap: 20px;
+    row-gap: 14px;
+  }
+
+  .rodape-navegacao h2 {
+    flex-basis: 100%;
+    margin-bottom: 0;
+  }
+
+  .rodape-base {
+    align-items: flex-start;
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
   }
 }
+.rodape .painel-rodape,
+.conta-rodape .painel-rodape {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--linha);
+  border-radius: 6px;
+  color: var(--ciano-texto);
+  background: var(--papel);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.conta-rodape .painel-rodape {
+  margin-right: 16px;
+}
+
+.painel-rodape:hover {
+  border-color: var(--ciano-texto);
+  background: var(--ciano-suave);
+}
+

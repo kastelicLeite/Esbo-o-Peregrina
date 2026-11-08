@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="no-referrer">
+    <title>Contato por e-mail | Gráfica Peregrina</title>
+    <link rel="stylesheet" href="/css/principal.css">
+    <link rel="stylesheet" href="/css/paginas/conta.css">
+    <link rel="stylesheet" href="/css/paginas/contato.css">
+    <link rel="stylesheet" href="/css/base/tema.css">
+    <script src="/js/tema.js"></script>
+    <script type="module" src="/js/contato.js"></script>
+  </head>
+  <body>
+    <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+    <header class="conta-cabecalho">
+      <a href="/" aria-label="Gráfica Peregrina, início"><img src="/assets/imagens/logo-peregrina.png" alt="Gráfica Peregrina" width="2159" height="640"></a>
+      <nav aria-label="Navegação">
+        <a href="/paginas/produtos.html">Produtos</a>
+        <a href="/paginas/orcamento.html">Meu carrinho</a>
+        <a data-conta-simples href="/paginas/minha-conta.html" hidden>Minha conta</a>
+        <div class="acesso-visitante" data-acesso-visitante>
+          <a href="/paginas/entrar-conta.html">Entrar</a>
+          <a class="cadastrar-cabecalho" href="/paginas/cadastro.html">Cadastrar</a>
+        </div>
+        <a class="painel-cabecalho" data-painel-admin href="/paginas/painel-admin.html" hidden>Painel admin</a>
+      </nav>
+    </header>
+    <main tabindex="-1" id="conteudo" class="conta-pagina">
+      <p class="contato-etiqueta">VAMOS CONVERSAR</p>
+      <h1>Fale com a Peregrina</h1>
+      <p class="conta-introducao">Envie uma mensagem direto pelo site. Nossa equipe recebe no e-mail da gráfica e pode responder para o endereço que você informar.</p>
+      <div class="contato-layout">
+        <section class="conta-cartao">
+          <h2>Qual é a sua ideia?</h2>
+          <form id="form-contato" class="conta-form">
+            <div class="conta-campo">
+              <label for="contato-nome">Seu nome</label>
+              <input id="contato-nome" name="nome" autocomplete="name" maxlength="100" required>
+            </div>
+            <div class="conta-campo">
+              <label for="contato-email">Seu e-mail para resposta</label>
+              <input id="contato-email" name="email" type="email" autocomplete="email" maxlength="180" required>
+            </div>
+            <div class="conta-campo">
+              <label for="contato-assunto">Assunto</label>
+              <select id="contato-assunto" name="assunto">
+                <option value="atendimento">Atendimento</option>
+                <option value="produto">Dúvida sobre produto</option>
+                <option value="orcamento">Orçamento</option>
+                <option value="privacidade">Privacidade e dados pessoais</option>
+                <option value="outro">Outro assunto</option>
+              </select>
+            </div>
+            <div class="conta-campo">
+              <label for="contato-mensagem">Sua mensagem</label>
+              <textarea id="contato-mensagem" name="mensagem" rows="6" minlength="10" maxlength="3000" required aria-describedby="contato-ajuda"></textarea>
+              <small id="contato-ajuda">De 10 a 3.000 caracteres. Você pode contar o produto, a quantidade e o que precisa.</small>
+            </div>
+            <div hidden aria-hidden="true"><label for="contato-site">Seu site</label><input id="contato-site" name="site_pessoal" tabindex="-1" autocomplete="off"></div>
+            <p class="conta-ajuda">Usaremos seu nome, e-mail e mensagem para responder ao contato. <a class="link-texto" href="/paginas/privacidade.html">Saiba como cuidamos dos seus dados.</a></p>
+            <button type="submit" class="botao" disabled>Enviar mensagem</button>
+            <p id="estado-contato" role="status" aria-live="polite"></p>
+          </form>
+          <button id="recarregar-contato" class="botao-secundario" type="button" hidden>Tentar novamente</button>
+        </section>
+        <aside class="conta-cartao contato-orientacoes">
+          <h2>Um canal para cada conversa</h2>
+          <p>Não precisa criar uma conta para enviar sua mensagem. Confira seu e-mail para que a equipe consiga retornar.</p>
+          <p>O envio não confirma um pedido, pagamento ou prazo de produção. Esses detalhes serão combinados com a equipe.</p>
+          <a id="contato-whatsapp" class="botao-secundario" target="_blank" rel="noopener noreferrer" hidden>Prefiro conversar pelo WhatsApp</a>
+          <p><a class="link-texto" href="/paginas/produtos.html">Explorar os produtos →</a></p>
+        </aside>
+      </div>
+    </main>
+    <footer class="conta-rodape"><a href="/">Voltar ao site</a> · <a href="/paginas/privacidade.html">Privacidade e atendimento</a></footer>
+  </body>
+</html>

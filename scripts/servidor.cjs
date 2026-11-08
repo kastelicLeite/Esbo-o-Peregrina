@@ -1,56 +1,45 @@
 const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
-const { atenderAdmin } = require('./acesso-admin.cjs');
+const os = require('node:os');
+const aplicacao = require('../backend/aplicacao.cjs');
+const { pastaDados, banco } = require('../backend/dados/banco.cjs');
+const { iniciarAgendamento } = require('../backend/manutencao/agendamento-backup.cjs');
 
-const raiz = path.resolve(__dirname, '..', 'frontend');
 const porta = Number(process.env.PORT || 3000);
-const endereco = '0.0.0.0';
-const tipos = {
-  '.html': 'text/html; charset=utf-8',
-  '.css': 'text/css; charset=utf-8',
-  '.js': 'text/javascript; charset=utf-8',
-  '.svg': 'image/svg+xml',
-  '.webp': 'image/webp',
-  '.avif': 'image/avif',
-  '.png': 'image/png',
-  '.jpg': 'image/jpeg',
-};
+const endereco = process.env.HOST || (process.env.NODE_ENV === 'production' ? '0.0.0.0' : '127.0.0.1');
+const arquivoTrava = path.join(process.env.RAILWAY_ENVIRONMENT_ID ? os.tmpdir() : pastaDados, 'servidor.pid');
 
-const servidor = http.createServer((pedido, resposta) => {
-  if (atenderAdmin(pedido, resposta)) return;
+if (fs.existsSync(arquivoTrava)) {
+  const pid = Number(fs.readFileSync(arquivoTrava, 'utf8'));
+  let ativo = false;
+  try { process.kill(pid, 0); ativo = true; } catch {}
+  if (ativo && pid !== process.pid) throw new Error('Este banco já está em uso por outro servidor. Encerre-o antes de continuar.');
+  fs.unlinkSync(arquivoTrava);
+}
+fs.writeFileSync(arquivoTrava, String(process.pid), { flag: 'wx' });
 
-  let caminho;
-
-  try {
-    const endereco = new URL(pedido.url, 'http://localhost');
-    caminho = path.resolve(raiz, '.' + decodeURIComponent(endereco.pathname));
-  } catch {
-    resposta.writeHead(400).end();
-    return;
-  }
-  if (caminho === raiz || caminho === path.join(raiz, 'index.html')) {
-    caminho = path.join(raiz, 'paginas', 'index.html');
-  }
-
-  if (!caminho.startsWith(raiz + path.sep)) {
-    resposta.writeHead(403).end();
-    return;
-  }
-
-  fs.readFile(caminho, (erro, conteudo) => {
-    if (erro) {
-      resposta.writeHead(404).end();
-      return;
-    }
-
-    resposta.writeHead(200, {
-      'Content-Type': tipos[path.extname(caminho)] || 'application/octet-stream',
-    });
-    resposta.end(conteudo);
-  });
-});
-
+const servidor = http.createServer(aplicacao);
+const pararAgendamento = iniciarAgendamento();
 servidor.listen(porta, endereco, () => {
-  console.log(`Site disponível em http://${endereco}:${porta}`);
+  console.log(`Site disponível em http://${endereco}:${servidor.address().port}`);
 });
+
+process.once('exit', () => {
+  if (fs.existsSync(arquivoTrava) && fs.readFileSync(arquivoTrava, 'utf8') === String(process.pid)) {
+    fs.unlinkSync(arquivoTrava);
+  }
+});
+
+for (const sinal of ['SIGINT', 'SIGTERM']) {
+  process.once(sinal, () => {
+    pararAgendamento();
+    servidor.close(() => {
+      banco.close();
+      process.exit(0);
+    });
+    setTimeout(() => process.exit(0), 3000).unref();
+  });
+}
+
+module.exports = servidor;

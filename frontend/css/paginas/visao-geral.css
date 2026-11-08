@@ -1,0 +1,44 @@
+.visao-geral { min-width: 0; }
+.resumo-cabecalho { display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 16px; }
+.visao-geral .resumo-ajuda { color: var(--cinza); font-size: 13px; line-height: 1.7; }
+.resumo-indicadores { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-block: 24px; }
+.resumo-indicador {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid var(--linha);
+  border-top: 3px solid var(--ciano-texto);
+  border-radius: 8px;
+  background: var(--papel);
+}
+.resumo-indicador strong { color: var(--ciano-texto); font-size: 32px; line-height: 1.15; }
+.resumo-indicador span { font-weight: 600; font-size: 15px; }
+.resumo-indicador small { color: var(--cinza); line-height: 1.5; }
+.resumo-indicador:hover { border-color: var(--ciano-texto); }
+.resumo-atalhos { margin-bottom: 24px; }
+.resumo-grade { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-bottom: 20px; align-items: start; }
+.resumo-secao { min-width: 0; padding: 24px; border: 1px solid var(--linha); border-radius: 8px; background: var(--papel); }
+.visao-geral .resumo-secao h2 { margin: 0 0 12px; font-size: 21px; }
+.resumo-secao p { line-height: 1.7; font-size: 14px; }
+.resumo-secao a { color: var(--ciano-texto); text-underline-offset: 4px; }
+.resumo-secao a:hover { text-decoration: underline; }
+.visao-geral a:focus-visible, .visao-geral button:focus-visible { outline: 2px solid var(--magenta-texto); outline-offset: 4px; }
+.resumo-lista { padding: 0; list-style: none; }
+.resumo-lista li { display: grid; gap: 5px; padding: 12px 0; border-bottom: 1px solid var(--linha); overflow-wrap: anywhere; }
+.resumo-lista li:last-child { border: 0; }
+.resumo-lista small { color: var(--cinza); line-height: 1.6; }
+.resumo-links { display: grid; gap: 12px; margin-top: 16px; font-size: 14px; }
+.resumo-atencao { padding: 12px; border-left: 3px solid var(--magenta-texto); background: var(--magenta-suave); }
+@media (max-width: 1000px) {
+  .resumo-indicadores { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .resumo-grade { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 520px) {
+  .resumo-indicadores { gap: 10px; }
+  .resumo-indicador { padding: 16px 12px; }
+  .resumo-indicador span { font-size: 13px; }
+  .resumo-secao { padding: 20px 16px; }
+  .resumo-cabecalho > button { width: 100%; }
+}
